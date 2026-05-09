@@ -1,0 +1,173 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Admin.master.cs" Inherits="Admin_Admin" %>
+
+<!DOCTYPE html>
+<html>
+<head id="Head1" runat="server">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+      
+<style>
+    :root {
+        --sidebar-width: 240px;
+        --primary-color: #5d5fef;
+        --bg-color: #f8f9fd;
+        --text-muted: #9da3bb;
+        --text-active: #5d5fef;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+        font-family: 'Inter', sans-serif;
+        background-color: var(--bg-color);
+        display: flex; /* Sidebar aur Content ko side-by-side rakhne ke liye */
+        min-height: 100vh;
+    }
+
+    form { display: flex; width: 100%; }
+
+    /* Sidebar - Desktop */
+    .sidebar {
+        width: var(--sidebar-width);
+        background: #ffffff;
+        border-right: 1px solid #eaeef4;
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        height: 100vh;
+        z-index: 100;
+        transition: 0.3s;
+    }
+
+    .sidebar-logo {
+        padding: 25px;
+        font-weight: 700;
+        font-size: 1.2rem;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: #1a1a1a;
+    }
+
+    .logo-icon { background: var(--primary-color); color: white; padding: 8px; border-radius: 8px; }
+
+    .nav-container { flex: 1; padding: 10px 15px; }
+
+    .nav-item {
+        display: flex;
+        align-items: center;
+        padding: 12px 15px;
+        margin-bottom: 5px;
+        text-decoration: none;
+        color: var(--text-muted);
+        border-radius: 10px;
+        font-size: 0.9rem;
+        font-weight: 500;
+        white-space: nowrap;
+    }
+
+    .nav-item i { margin-right: 12px; width: 20px; text-align: center; font-size: 1.1rem; }
+
+    .nav-item:hover, .nav-item.active { background: #f4f5ff; color: var(--text-active); }
+
+    .nav-divider { height: 1px; background: #f0f0f0; margin: 15px; }
+
+    /* Main Content Area */
+    .main-content {
+        flex: 1;
+        margin-left: var(--sidebar-width);
+        padding: 30px;
+        width: 100%;
+        transition: 0.3s;
+    }
+
+    /* Upgrade Card - Desktop only */
+    .upgrade-card { margin: 15px; padding: 15px; background: #f8f9fd; border-radius: 12px; text-align: center; }
+    .upgrade-btn { background: var(--primary-color); color: white; border: none; padding: 10px; border-radius: 8px; width: 100%; cursor: pointer; font-size: 0.8rem; margin-top: 8px; }
+
+    /* Responsive adjustments */
+    @media (max-width: 1024px) {
+        :root { --sidebar-width: 80px; } /* Sidebar chhota ho jayega tablet par */
+        .sidebar-logo span, .nav-item span, .upgrade-card, .nav-divider { display: none; } /* Text hide ho jayega bss icons dikhenge */
+        .nav-item i { margin-right: 0; }
+        .nav-item { justify-content: center; padding: 15px; }
+        .sidebar-logo { justify-content: center; padding: 20px 0; }
+    }
+
+    @media (max-width: 600px) {
+        body { flex-direction: column; } /* Mobile par vertical layout */
+        form { flex-direction: column; }
+        .sidebar {
+            width: 100%;
+            height: auto;
+            position: relative; /* Fixed nahi rahega mobile par */
+            border-right: none;
+            border-bottom: 1px solid #eaeef4;
+        }
+        .nav-container {
+            display: flex;
+            overflow-x: auto; /* Horizontal scrollable menu on mobile */
+            padding: 5px;
+        }
+        .nav-item {
+            flex-direction: column;
+            padding: 10px;
+            font-size: 0.7rem;
+            min-width: 70px;
+        }
+        .sidebar-logo { display: none; } /* Logo hide on mobile to save space */
+        .main-content { margin-left: 0; padding: 15px; }
+    }
+</style>
+
+    <asp:ContentPlaceHolder id="head" runat="server"></asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-logo">
+                <div class="logo-icon"><i class="fas fa-smile"></i></div>
+                <span>CONSULT</span>
+            </div>
+
+            <div class="nav-container">
+                <a href="Dashboard.aspx" class="nav-item active">
+                    <i class="fa-solid fa-house"></i><span>Dashboard</span>
+                </a>
+                <a href="acourse.aspx" class="nav-item">
+                    <i class="fa-solid fa-layer-group"></i><span>Courses</span>
+                </a>
+                <a href="ablog.aspx" class="nav-item">
+                    <i class="fa-solid fa-newspaper"></i><span>Blogs</span>
+                </a>
+                <a href="AI.aspx" class="nav-item">
+                    <i class="fa-solid fa-robot"></i><span>AI Assistant</span>
+                </a>
+                
+                <div class="nav-divider"></div>
+
+                <a href="#" class="nav-item">
+                    <i class="fa-solid fa-gear"></i><span>Settings</span>
+                </a>
+            </div>
+
+            <div class="upgrade-card">
+                <p style="font-size: 0.7rem; font-weight: 600;">Upgrade to PRO</p>
+                <button type="button" class="upgrade-btn">Upgrade</button>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+                <!-- Content here -->
+            </asp:ContentPlaceHolder>
+        </div>
+
+    </form>
+</body>
+</html>

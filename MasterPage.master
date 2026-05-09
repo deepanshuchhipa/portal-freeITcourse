@@ -1,0 +1,603 @@
+﻿'<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link href="assets/css/all.min.css" rel="stylesheet" />
+    <link href="assets/css/aos.css" rel="stylesheet" />
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/css/glightbox.min.css" rel="stylesheet" />
+    <link href="assets/css/main.css" rel="stylesheet" />
+    <link href="assets/css/odometer-theme-default.css" rel="stylesheet" />
+    <link href="assets/css/swiper-bundle.min.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+       <style>
+        :root {
+            --primary: #2563eb;
+            --primary-hover: #1d4ed8;
+            --primary-soft: #eff6ff;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --white: #ffffff;
+            --nav-bg: rgba(255, 255, 255, 0.8);
+            --sidebar-width: 300px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: #fdfdfd;
+            color: var(--text-main);
+
+        }
+
+        /* --- MODERN NAVBAR --- */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            background: var(--nav-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(226, 232, 240, 0.5);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        /* Logo Branding */
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 800;
+            font-size: 24px;
+            letter-spacing: -1px;
+        }
+
+        .logo-box {
+            width: 42px;
+            height: 42px;
+            background: linear-gradient(135deg, var(--primary), #60a5fa);
+            color: white;
+            border-radius: 12px;
+            display: grid;
+            place-items: center;
+            box-shadow: 0 8px 16px rgba(37, 99, 235, 0.2);
+        }
+
+        /* Professional Desktop Menu */
+        .nav-menu {
+            display: flex;
+            gap: 8px;
+            background: #f1f5f9;
+            padding: 6px;
+            border-radius: 16px;
+        }
+
+        .nav-item {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-size: 14px;
+            font-weight: 700;
+            padding: 10px 22px;
+            border-radius: 12px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+            .nav-item:hover {
+                color: var(--primary);
+                background: var(--white);
+            }
+
+            .nav-item.active {
+                color: var(--primary);
+                background: var(--white);
+                box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            }
+
+        /* Right Side Actions */
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .btn-contact {
+            background: var(--primary);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 14px;
+            transition: 0.3s;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+        }
+
+            .btn-contact:hover {
+                background: var(--primary-hover);
+                transform: translateY(-2px);
+                box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+            }
+
+        /* Sidebar Toggle */
+        .sidebar-trigger {
+            display: none;
+            width: 46px;
+            height: 46px;
+            place-items: center;
+            cursor: pointer;
+            border-radius: 14px;
+            background: var(--primary-soft);
+            color: var(--primary);
+            transition: 0.3s;
+        }
+
+        /* --- SIDEBAR (MOBILE) --- */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            right: -320px;
+            width: var(--sidebar-width);
+            height: 100vh;
+            background: var(--white);
+            z-index: 1002;
+            transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            padding: 40px 30px;
+        }
+
+            .sidebar.open {
+                right: 0;
+            }
+
+        .sidebar-link {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 16px 20px;
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 700;
+            border-radius: 16px;
+            margin-bottom: 10px;
+            transition: 0.3s;
+        }
+
+            .sidebar-link i {
+                width: 24px;
+                font-size: 18px;
+                color: var(--text-muted);
+            }
+
+            .sidebar-link:hover, .sidebar-link.active {
+                background: var(--primary-soft);
+                color: var(--primary);
+            }
+
+                .sidebar-link.active i {
+                    color: var(--primary);
+                }
+
+        .sidebar-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(15, 23, 42, 0.5);
+            backdrop-filter: blur(8px);
+            z-index: 1001;
+            opacity: 0;
+            visibility: hidden;
+            transition: 0.3s;
+        }
+
+            .sidebar-overlay.open {
+                opacity: 1;
+                visibility: visible;
+            }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 992px) {
+            .nav-menu, .btn-contact {
+                display: none;
+            }
+
+            .sidebar-trigger {
+                display: grid;
+            }
+
+            .nav-container {
+                padding: 0 24px;
+            }
+        }
+
+        .hero {
+            padding: 180px 5% 100px;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+            .hero h1 {
+                font-size: 56px;
+                font-weight: 800;
+                letter-spacing: -2px;
+                line-height: 1.1;
+            }
+
+            .hero p {
+                margin-top: 20px;
+                font-size: 18px;
+                color: var(--text-muted);
+                line-height: 1.6;
+            }
+    </style>
+    <style>
+:root {
+    --f-bg: #ffffff;
+    --f-accent: #2563eb;
+    --f-text-main: #0f172a;
+    --f-text-muted: #64748b;
+    --f-border: #e2e8f0;
+}
+
+.minimal-footer {
+    background-color: var(--f-bg);
+    padding: 40px 5% 20px;
+    font-family: 'Inter', 'Plus Jakarta Sans', sans-serif;
+    overflow: hidden; /* FIX */
+}
+
+/* Top Branding */
+.f-top-branding {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 60px;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 20px;
+    flex-wrap: wrap; /* FIX */
+}
+
+.f-logo-text {
+    font-size: 42px;
+    font-weight: 700;
+    color: var(--f-text-main);
+    letter-spacing: -1px;
+    margin: 0;
+    word-break: break-word; /* FIX */
+}
+
+.f-tagline {
+    max-width: 350px;
+    text-align: right;
+}
+
+.f-tagline p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--f-text-main);
+    font-weight: 500;
+    margin: 0;
+}
+
+/* Divider */
+.f-divider {
+    border: 0;
+    border-top: 1px solid var(--f-border);
+    margin-bottom: 50px;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Bottom Content */
+.f-bottom-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* FIX */
+    max-width: 1400px;
+    margin: 0 auto;
+    gap: 40px;
+    flex-wrap: wrap; /* FIX */
+}
+
+/* Copyright */
+.f-copyright {
+    color: var(--f-text-muted);
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 300px; /* FIX */
+}
+
+/* Status */
+.f-status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    font-size: 12px;
+    color: #059669;
+    flex-wrap: wrap; /* FIX */
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #10b981;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+/* Links */
+.f-links-grid {
+    display: flex;
+    gap: 80px;
+    flex-wrap: wrap;
+    justify-content: flex-end; /* FIX */
+}
+
+.f-link-col {
+    min-width: 140px; /* FIX */
+}
+
+.f-link-col h4 {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--f-text-main);
+    margin-bottom: 18px;
+}
+
+.f-link-col a {
+    display: block;
+    text-decoration: none;
+    color: var(--f-text-muted);
+    font-size: 15px;
+    margin-bottom: 10px;
+    transition: color 0.2s;
+    line-height: 1.5; /* FIX */
+}
+
+.f-link-col a:hover {
+    color: var(--f-accent);
+}
+
+/* =========================
+   TABLET
+========================= */
+@media (max-width: 992px) {
+
+    .minimal-footer {
+        padding: 60px 4% 30px;
+    }
+
+    .f-top-branding {
+        flex-direction: column;
+        gap: 20px;
+        text-align: left;
+    }
+
+    .f-tagline {
+        text-align: left;
+        max-width: 100%;
+    }
+
+    .f-bottom-content {
+        flex-direction: column-reverse;
+        gap: 40px;
+    }
+
+    .f-links-grid {
+        gap: 40px;
+        justify-content: flex-start;
+    }
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 576px) {
+
+    .minimal-footer {
+        padding: 50px 20px 25px;
+    }
+
+    .f-logo-text {
+        font-size: 30px;
+    }
+
+    .f-tagline p {
+        font-size: 14px;
+    }
+
+    .f-links-grid {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .f-link-col {
+        width: 100%;
+    }
+
+    .f-link-col h4 {
+        font-size: 13px;
+        margin-bottom: 10px;
+    }
+
+    .f-link-col a {
+        font-size: 14px;
+        margin-bottom: 8px;
+    }
+
+    .f-copyright {
+        font-size: 12px;
+        gap: 10px;
+        max-width: 100%;
+    }
+
+    .f-status {
+        font-size: 11px;
+    }
+}
+
+</style>
+
+    <form id="form1" runat="server">
+        <div>
+
+            <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+
+            <aside class="sidebar" id="sidebar">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px;">
+                    <div class="nav-logo">
+                        <div class="logo-box"><i class="fas fa-wind"></i></div>
+                        <span>CloudFlow</span>
+                    </div>
+                    <i class="fas fa-times" style="font-size: 22px; cursor: pointer;" onclick="toggleSidebar()"></i>
+                </div>
+                <!-- SIDEBAR -->
+                <nav>
+                    <a href="home.aspx" class="sidebar-link active"><i class="fas fa-home"></i>Home</a>
+                    <a href="about.aspx" class="sidebar-link"><i class="fas fa-layer-group"></i>About</a>
+                    <a href="course.aspx" class="sidebar-link"><i class="fas fa-book-open"></i>Courses</a>
+                    <a href="blog.aspx" class="sidebar-link"><i class="fas fa-shapes"></i>Blog</a>
+                    <a href="contact.aspx" class="sidebar-link"><i class="fas fa-envelope"></i>Contact</a>
+                </nav>
+            </aside>
+
+            <nav class="navbar">
+                <div class="nav-container">
+                    <a href="#" class="nav-logo">
+                        <div class="logo-box"><i class="fas fa-wind"></i></div>
+                        <span>CloudFlow</span>
+                    </a>
+
+                    <!-- NAVBAR -->
+                    <div class="nav-menu">
+                        <a id="navHome" runat="server" href="home.aspx" class="nav-item">Home</a>
+                        <a id="navAbout" runat="server" href="about.aspx" class="nav-item">About</a>
+                        <a id="navCourse" runat="server" href="course.aspx" class="nav-item">Courses</a>
+                        <a id="navBlog" runat="server" href="blog.aspx" class="nav-item">Blog</a>
+                        <a id="navContact" runat="server" href="contact.aspx" class="nav-item">Contact</a>
+                    </div>
+
+                    <div class="nav-right">
+                        <a href="#" class="btn-contact">Get Started</a>
+                        <div class="sidebar-trigger" onclick="toggleSidebar()">
+                            <i class="fas fa-bars-staggered"></i>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+            <footer class="minimal-footer">
+                <!-- Top Branding Section -->
+                <div class="f-top-branding">
+                    <div class="f-brand-identity">
+                        <h1 class="f-logo-text">CloudFlow</h1>
+                    </div>
+                    <div class="f-tagline">
+                        <p>Elevating your digital experience with seamless cloud solutions. Built for the next generation of creators.</p>
+                    </div>
+                </div>
+
+                <hr class="f-divider">
+
+                <!-- Bottom Links Section -->
+                <div class="f-bottom-content">
+                    <div class="f-copyright">
+                        <p>&copy; 2026 CloudFlow Inc. &bull; All rights reserved.</p>
+
+                    </div>
+
+                    <div class="f-links-grid">
+                        <div class="f-link-col">
+                            <h4>Platform</h4>
+                            <a href="#">Overview</a>
+                            <a href="#">Features</a>
+                            <a href="#">Pricing</a>
+                        </div>
+                        <div class="f-link-col">
+                            <h4>Legal</h4>
+                            <a href="#">Privacy Policy</a>
+                            <a href="#">Terms of Service</a>
+                            <a href="#">Security</a>
+                        </div>
+                        <div class="f-link-col">
+                            <h4>Connect</h4>
+                            <a href="#">Twitter</a>
+                            <a href="#">LinkedIn</a>
+                            <a href="#">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </form>
+    <script src="assets/js/jquery-4.0.0.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/aos.js"></script>
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <script src="assets/js/odometer.min.js"></script>
+    <script src="assets/js/jquery.marquee.min.js"></script>
+    <script src="assets/js/simpleParallax.min.js"></script>
+    <script src="assets/js/glightbox.min.js"></script>
+    <script src="assets/js/gsap.min.js"></script>
+    <script src="assets/js/ScrollTrigger.min.js"></script>
+    <script src="assets/js/SplitText.min.js"></script>
+    <script src="assets/js/cursor.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('sidebarOverlay');
+            sidebar.classList.toggle('open');
+            overlay.classList.toggle('open');
+            
+            document.body.style.overflow = sidebar.classList.contains('open') ? 'hidden' : 'auto';
+        }
+
+        // Scroll Effect for Navbar
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('.navbar');
+        if (window.scrollY > 50) {
+            nav.style.height = '70px';
+            nav.style.boxShadow = '0 10px 30px rgba(0,0,0,0.05)';
+        } else {
+            nav.style.height = '80px';
+            nav.style.boxShadow = 'none';
+        }
+        });
+    </script>
+</body>
+</html>
