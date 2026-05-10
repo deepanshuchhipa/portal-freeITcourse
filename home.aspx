@@ -387,25 +387,33 @@
                             </p>
 
                             <div class="hero-search-box mt-4 position-relative" data-aos="fade-up">
-                                <form action="courses.aspx" method="get" autocomplete="off">
+                                <form action="coursedetail.aspx" method="get" autocomplete="off">
 
-                                    <div class="input-group shadow-lg rounded-pill overflow-hidden">
+                                    <div class="input-group shadow-lg rounded-pill overflow-hidden hero-search-box position-relative">
 
-                                        <input type="text" id="searchInput" name="query"
+                                        <!-- SEARCH INPUT -->
+                                        <input type="text"
+                                            id="searchInput"
+                                            name="course"
                                             class="form-control border-0 px-4 py-3"
-                                            placeholder="Search courses... (e.g. C#, AI, Web Dev)"
+                                            placeholder="Search courses..."
                                             onkeyup="showSuggestions(this.value)" />
 
+                                        <!-- SEARCH BUTTON -->
                                         <button type="submit" class="btn btn-primary px-4">
                                             <i class="fa fa-search"></i>
                                         </button>
 
+                                        <!-- SUGGESTION BOX -->
+                                        <ul id="suggestionBox"
+                                            class="suggestion-box list-unstyled">
+                                        </ul>
+
                                     </div>
 
-                                    <!-- 🔽 Suggestion Box -->
-                                    <ul id="suggestionBox" class="suggestion-box list-unstyled"></ul>
-
                                 </form>
+
+
                             </div>
 
 
@@ -470,7 +478,7 @@
                                         with practical projects and real-world examples.
                                         </p>
 
-                                        <a href="#">Explore Courses
+                                        <a href="course.aspx">Explore Courses
                                         <i class="fa-regular fa-arrow-right-long"></i>
                                         </a>
                                     </div>
@@ -496,7 +504,7 @@
                                         beginner-friendly tutorials and hands-on practice.
                                         </p>
 
-                                        <a href="#">Start Learning
+                                        <a href="course.aspx">Start Learning
                                         <i class="fa-regular fa-arrow-right-long"></i>
                                         </a>
                                     </div>
@@ -522,7 +530,7 @@
                                         yourself for internships and IT job opportunities.
                                         </p>
 
-                                        <a href="#">Read More
+                                        <a href="course.aspx">Read More
                                         <i class="fa-regular fa-arrow-right-long"></i>
                                         </a>
                                     </div>
@@ -671,7 +679,7 @@
             </div>
 
             <!-- SECOND SLIDER -->
-<%--            <div class="slider-container reverse">
+            <%--            <div class="slider-container reverse">
                 <div class="marquee-content">
 
                     <asp:Repeater ID="rptTestimonials2" runat="server">
@@ -702,7 +710,6 @@
 
                 </div>
             </div>--%>
-
         </div>
 
     </section>
@@ -788,72 +795,60 @@
         <div class="container">
             <div class="ixl-blog-posts-wrapper">
                 <div class="row">
-                    <div class="col-md-6 col-xl-4">
-                        <article class="ixl-blog-item" data-aos="fade-up" data-aos-delay="400"
-                            data-aos-duration="1000">
-                            <div class="img image-hover-effect">
-                                <img src="assets/images/home-v2/blog/blog-img-01.png" alt="blog-image"
-                                    class="img-fluid">
-                                <span>October 19, 2022</span>
-                            </div>
-                            <div class="content">
-                                <div class="meta">
-                                    <span><i class="fa-regular fa-user"></i>By admin</span>
 
-                                </div>
-                                <a class="link-title" href="blog-single.aspx">
-                                    <h2 class="ixl-heading-md bg-line-underline">Empowering Brands the a through
-                                                    Creative </h2>
-                                </a>
-                                <a href="blog-single.aspx" class="read-more">Read More <i
-                                    class="fa-regular fa-arrow-right-long"></i></a>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="col-md-6 col-xl-4">
-                        <article class="ixl-blog-item" data-aos="fade-up" data-aos-delay="500"
-                            data-aos-duration="1200">
-                            <div class="img image-hover-effect">
-                                <img src="assets/images/home-v2/blog/blog-img-02.png" alt="blog-image"
-                                    class="img-fluid">
-                                <span>October 19, 2022</span>
-                            </div>
-                            <div class="content">
-                                <div class="meta">
-                                    <span><i class="fa-regular fa-user"></i>By admin</span>
+                    <asp:Repeater ID="rptBlog" runat="server">
 
-                                </div>
-                                <a class="link-title" href="blog-single.aspx">
-                                    <h2 class="ixl-heading-md bg-line-underline">Empowering Brands the a through
-                                                    Creative </h2>
-                                </a>
-                                <a href="blog-single.aspx" class="read-more">Read More <i
-                                    class="fa-regular fa-arrow-right-long"></i></a>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="col-md-6 col-xl-4">
-                        <article class="ixl-blog-item" data-aos="fade-up" data-aos-delay="600"
-                            data-aos-duration="1400">
-                            <div class="img image-hover-effect">
-                                <img src="assets/images/home-v2/blog/blog-img-03.png" alt="blog-image"
-                                    class="img-fluid">
-                                <span>October 19, 2022</span>
-                            </div>
-                            <div class="content">
-                                <div class="meta">
-                                    <span><i class="fa-regular fa-user"></i>By admin</span>
+                        <ItemTemplate>
 
-                                </div>
-                                <a class="link-title" href="blog-single.aspx">
-                                    <h2 class="ixl-heading-md bg-line-underline">Empowering Brands the a through
-                                                    Creative </h2>
-                                </a>
-                                <a href="blog-single.aspx" class="read-more">Read More <i
-                                    class="fa-regular fa-arrow-right-long"></i></a>
+                            <div class="col-md-6 col-xl-4">
+                                <article class="ixl-blog-item"
+                                    data-aos="fade-up"
+                                    data-aos-delay="400"
+                                    data-aos-duration="1000">
+
+                                    <div class="img image-hover-effect">
+
+                                        <img src='<%# ResolveUrl(Eval("ImageUrl").ToString()) %>'
+                                            alt="blog-image"
+                                            class="img-fluid" />
+
+                                        <span>
+                                            <%# Convert.ToDateTime(Eval("CreatedDate")).ToString("MMMM dd, yyyy") %>
+                                        </span>
+
+                                    </div>
+
+                                    <div class="content">
+
+                                        <div class="meta">
+                                            <span>
+                                                <i class="fa-regular fa-user"></i>
+                                                By Admin
+                                            </span>
+                                        </div>
+
+                                        <a class="link-title"
+                                            href='blogdetail.aspx?id=<%# Eval("BlogID") %>'>
+
+                                            <h2 class="ixl-heading-md bg-line-underline">
+                                                <%# Eval("Title") %>
+                                            </h2>
+
+                                        </a>
+
+                                        <a href='blogdetail.aspx?id=<%# Eval("BlogID") %>'
+                                            class="read-more">Read More
+                                        <i class="fa-regular fa-arrow-right-long"></i>
+
+                                        </a>
+
+                                    </div>
+                                </article>
                             </div>
-                        </article>
-                    </div>
+
+                        </ItemTemplate>
+
+                    </asp:Repeater>
 
                 </div>
             </div>
@@ -862,77 +857,75 @@
 
     <div class="main-container">
 
-    <!-- FAQ SECTION -->
-    <div class="faq-section">
+        <!-- FAQ SECTION -->
+        <div class="faq-section">
 
-        <div class="badge">
-            Common Questions
+            <div class="badge">
+                Common Questions
+            </div>
+
+            <asp:Repeater ID="rptFaq" runat="server">
+
+                <ItemTemplate>
+
+                    <details class="faq-card"
+                        <%# Container.ItemIndex == 0 ? "open" : "" %>>
+
+                        <summary>
+                            <%# Eval("question") %>
+
+                            <div class="chevron"></div>
+                        </summary>
+
+                        <div class="content">
+                            <%# Eval("answer") %>
+                        </div>
+
+                    </details>
+
+                </ItemTemplate>
+
+            </asp:Repeater>
+
         </div>
 
-        <asp:Repeater ID="rptFaq" runat="server">
+        <!-- RIGHT INFO SECTION -->
+        <div class="info-section">
 
-            <ItemTemplate>
+            <h1>Start Learning IT Skills with Practical Experience.
+            </h1>
 
-                <details class="faq-card"
-                    <%# Container.ItemIndex == 0 ? "open" : "" %>>
-
-                    <summary>
-                        <%# Eval("question") %>
-
-                        <div class="chevron"></div>
-                    </summary>
-
-                    <div class="content">
-                        <%# Eval("answer") %>
-                    </div>
-
-                </details>
-
-            </ItemTemplate>
-
-        </asp:Repeater>
-
-    </div>
-
-    <!-- RIGHT INFO SECTION -->
-    <div class="info-section">
-
-        <h1>
-            Start Learning IT Skills with Practical Experience.
-        </h1>
-
-        <p>
-            Learn modern web development, programming, database management,
+            <p>
+                Learn modern web development, programming, database management,
             and software development through free beginner-friendly IT courses
             and real-world practical projects.
-        </p>
+            </p>
 
-        <div class="feature-list">
+            <div class="feature-list">
 
-            <div class="feature-item">
-                <div class="check-icon">✓</div>
-                Beginner Friendly IT Tutorials
+                <div class="feature-item">
+                    <div class="check-icon">✓</div>
+                    Beginner Friendly IT Tutorials
+                </div>
+
+                <div class="feature-item">
+                    <div class="check-icon">✓</div>
+                    Real Projects & Practical Learning
+                </div>
+
+                <div class="feature-item">
+                    <div class="check-icon">✓</div>
+                    Free Web Development Courses
+                </div>
+
             </div>
 
-            <div class="feature-item">
-                <div class="check-icon">✓</div>
-                Real Projects & Practical Learning
-            </div>
-
-            <div class="feature-item">
-                <div class="check-icon">✓</div>
-                Free Web Development Courses
-            </div>
+            <a href="#" class="cta-button">Explore Courses
+            </a>
 
         </div>
 
-        <a href="#" class="cta-button">
-            Explore Courses
-        </a>
-
     </div>
-
-</div>
 
     <!-- Cta -->
     <section class="ixl-cta-section">
@@ -956,68 +949,84 @@
     </section>
 
 
-    
+
 
 
     <script>
-    const courses = [
-        "C Programming",
-        "C++",
-        "C# .NET",
-        "Java",
-        "Python",
-        "Web Development",
-        "HTML CSS",
-        "JavaScript",
-        "React JS",
-        "ASP.NET",
-        "SQL Server",
-        "Data Science",
-        "Artificial Intelligence",
-        "Machine Learning",
-        "Cyber Security"
-    ];
 
-        function showSuggestions(value) {
-            let box = document.getElementById("suggestionBox");
+        async function showSuggestions(value) {
+
+            const box = document.getElementById("suggestionBox");
+
             box.innerHTML = "";
 
-            if (value.length === 0) {
+            if (value.trim() === "") {
+
                 box.style.display = "none";
+
                 return;
             }
 
-            let filtered = courses.filter(item =>
-                item.toLowerCase().includes(value.toLowerCase())
-            );
+            try {
 
-            if (filtered.length === 0) {
+                const response = await fetch("<%= ResolveUrl("~/home.aspx/GetCourses") %>", {
+
+                method: "POST",
+
+                headers: {
+                    "Content-Type": "application/json; charset=utf-8"
+                },
+
+                body: JSON.stringify({
+                    prefix: value
+                })
+
+            });
+
+            const data = await response.json();
+
+            const courses = data.d;
+
+            if (!courses || courses.length === 0) {
+
                 box.style.display = "none";
+
                 return;
             }
 
-            filtered.forEach(item => {
+            courses.forEach(function (item) {
+
                 let li = document.createElement("li");
-            li.innerText = item;
 
-            li.onclick = function () {
-                document.getElementById("searchInput").value = item;
-                box.style.display = "none";
-            };
+                li.innerHTML = item;
 
-            box.appendChild(li);
-        });
+                li.onclick = function () {
 
-        box.style.display = "block";
+                    document.getElementById("searchInput").value = item;
+
+                    box.style.display = "none";
+                };
+
+                box.appendChild(li);
+            });
+
+            box.style.display = "block";
+
         }
+        catch (err) {
 
-        // click outside = close suggestions
-        document.addEventListener("click", function (e) {
-            if (!e.target.closest(".hero-search-box")) {
-                document.getElementById("suggestionBox").style.display = "none";
-            }
-        });
+            console.log(err);
+        }
+    }
+
+    document.addEventListener("click", function (e) {
+
+        if (!e.target.closest(".hero-search-box")) {
+
+            document.getElementById("suggestionBox").style.display = "none";
+        }
+    });
+
     </script>
-
 </asp:Content>
 

@@ -3,16 +3,16 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <style>
         .form-error {
-    display: none;
-    font-size: 12px;
-    color: #dc2626;
-    margin-top: 5px;
-}
+            display: none;
+            font-size: 12px;
+            color: #dc2626;
+            margin-top: 5px;
+        }
 
-.input-error {
-    border-color: #dc2626 !important;
-    background-color: #fff5f5 !important;
-}
+        .input-error {
+            border-color: #dc2626 !important;
+            background-color: #fff5f5 !important;
+        }
         /* Optimized Contact Form Styling - Blue Theme */
         .ixl-blog-post .col-lg-4 .card {
             border: none;
@@ -131,97 +131,78 @@
                 <div class="row">
                     <div class="col-lg-8">
                         <article class="ixl-blog-item"
-    data-aos="fade-up"
-    data-aos-delay="600"
-    data-aos-duration="1500">
+                            data-aos="fade-up"
+                            data-aos-delay="600"
+                            data-aos-duration="1500">
 
-    <div class="thumb">
+                            <div class="thumb">
 
-        <a href='blog-single.aspx?id=<%= Request.QueryString["id"] %>'>
+                                <a href='blog-single.aspx?id=<%= Request.QueryString["id"] %>'>
 
-            <asp:Image ID="imgBlog"
-                runat="server"
-                CssClass="img-fluid"
-                AlternateText="blog-image-one" />
+                                    <asp:Image ID="imgBlog"
+                                        runat="server"
+                                        CssClass="img-fluid"
+                                        AlternateText="blog-image-one" />
 
-        </a>
+                                </a>
 
-        <div class="date">
 
-            <span>
-                <asp:Label ID="lblDay"
-                    runat="server"></asp:Label>
-            </span>
+                            </div>
 
-            <span>
-                <asp:Label ID="lblMonth"
-                    runat="server"></asp:Label>
-            </span>
+                            <div class="content-wrap">
 
-        </div>
+                                <ul class="meta">
 
-    </div>
+                                    <li>
+                                        <a href="#">
 
-    <div class="content-wrap">
+                                            <i class="fa-solid fa-calendar-days"></i>
 
-        <ul class="meta">
+                                            <asp:Label ID="lblDate"
+                                                runat="server"></asp:Label>
 
-            <li>
-                <a href="#">
+                                        </a>
+                                    </li>
 
-                    <i class="fa-solid fa-calendar-days"></i>
 
-                    <asp:Label ID="lblDate"
-                        runat="server"></asp:Label>
 
-                </a>
-            </li>
+                                    <!-- STATIC -->
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa-regular fa-user"></i>
+                                            (BL Soni)
+                                        </a>
+                                    </li>
 
-           
+                                </ul>
 
-            <!-- STATIC -->
-            <li>
-                <a href="#">
-                    <i class="fa-regular fa-user"></i>
-                    (BL Soni)
-                </a>
-            </li>
+                                <!-- TITLE -->
+                                <h2 class="post-title">
 
-        </ul>
+                                    <a class="ixl-heading-lg bg-line-underline"
+                                        href="#">
 
-        <!-- TITLE -->
-        <h2 class="post-title">
+                                        <asp:Label ID="lblTitle"
+                                            runat="server"></asp:Label>
 
-            <a class="ixl-heading-lg bg-line-underline"
-                href="#">
+                                    </a>
 
-                <asp:Label ID="lblTitle"
-                    runat="server"></asp:Label>
+                                </h2>
 
-            </a>
+                                <!-- DESCRIPTION -->
+                                <div class="excerpt mb-3"
+                                    id="blogDesc"
+                                    runat="server">
+                                </div>
 
-        </h2>
+                                <!-- BUTTON -->
 
-        <!-- DESCRIPTION -->
-      <div class="excerpt mb-3"
-     id="blogDesc"
-     runat="server">
-</div>
 
-        <!-- BUTTON -->
-        <a class="read-more-btn btn-style-1 mt-2"
-            href="#">
+                            </div>
 
-            Read More
-            <i class="fa-solid fa-arrow-right"></i>
+                        </article>
 
-        </a>
 
-    </div>
-
-</article>
-
-                      
                     </div>
                     <div class="col-lg-4">
                         <div class="card shadow-sm">
@@ -229,40 +210,40 @@
                                 <h3 class="card-title mb-4">Contact Us</h3>
                                 <form id="contactForm" action="#" method="POST">
 
-    <!-- Name -->
-    <div class="mb-3">
-        <label class="form-label">Full Name</label>
-        <input type="text" class="form-control" id="name" placeholder="Your Name">
-        <div class="form-error" id="nameError">Please enter at least 3 characters</div>
-    </div>
+                                    <!-- Name -->
+                                    <div class="mb-3">
+                                        <label class="form-label">Full Name</label>
+                                        <input type="text" class="form-control" id="name" placeholder="Your Name">
+                                        <div class="form-error" id="nameError">Please enter at least 3 characters</div>
+                                    </div>
 
-    <!-- Email -->
-    <div class="mb-3">
-        <label class="form-label">Email Address</label>
-        <input type="email" class="form-control" id="email" placeholder="name@example.com">
-        <div class="form-error" id="emailError">Enter a valid email</div>
-    </div>
+                                    <!-- Email -->
+                                    <div class="mb-3">
+                                        <label class="form-label">Email Address</label>
+                                        <input type="email" class="form-control" id="email" placeholder="name@example.com">
+                                        <div class="form-error" id="emailError">Enter a valid email</div>
+                                    </div>
 
-    <!-- Subject -->
-    <div class="mb-3">
-        <label class="form-label">Subject</label>
-        <input type="text" class="form-control" id="subject" placeholder="How can we help?">
-        <div class="form-error" id="subjectError">Subject is required</div>
-    </div>
+                                    <!-- Subject -->
+                                    <div class="mb-3">
+                                        <label class="form-label">Subject</label>
+                                        <input type="text" class="form-control" id="subject" placeholder="How can we help?">
+                                        <div class="form-error" id="subjectError">Subject is required</div>
+                                    </div>
 
-    <!-- Message -->
-    <div class="mb-3">
-        <label class="form-label">Message</label>
-        <textarea class="form-control" id="message" rows="4" placeholder="Write your message here..."></textarea>
-        <div class="form-error" id="messageError">Minimum 10 characters required</div>
-    </div>
+                                    <!-- Message -->
+                                    <div class="mb-3">
+                                        <label class="form-label">Message</label>
+                                        <textarea class="form-control" id="message" rows="4" placeholder="Write your message here..."></textarea>
+                                        <div class="form-error" id="messageError">Minimum 10 characters required</div>
+                                    </div>
 
-    <!-- Button -->
-    <div class="d-grid">
-        <button type="submit" class="btn btn-primary">Send Message</button>
-    </div>
+                                    <!-- Button -->
+                                    <div class="d-grid">
+                                        <button type="submit" class="btn btn-primary">Send Message</button>
+                                    </div>
 
-</form>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -317,7 +298,7 @@
                 e.preventDefault(); // stop form submit
             }
         });
-</script>
+    </script>
 </asp:Content>
 
 

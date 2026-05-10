@@ -124,7 +124,7 @@
                         <Columns>
                             <asp:TemplateField HeaderText="Image">
                                 <ItemTemplate>
-                                    <img src='<%# ResolveUrl("~"+Eval("ImageUrl").ToString()) %>' class="cms-badge-img" />
+                                    <img src='<%# ResolveUrl(Eval("ImageUrl").ToString()) %>' class="cms-badge-img" />
                                 </ItemTemplate>
                             </asp:TemplateField>
                             <asp:BoundField DataField="Title" HeaderText="Title" />

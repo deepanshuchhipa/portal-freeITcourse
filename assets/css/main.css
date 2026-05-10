@@ -1896,11 +1896,10 @@ textarea {
   margin-top: 60px;
   display: flex;
   flex-direction: row;
-  gap: 20px;
   background: var(--white);
   border-radius: 20px;
   box-shadow: var(--box-shadow);
-  padding: 40px;
+  padding: 30px;
   transform-style: preserve-3d;
   transition: all 0.4s ease-in-out;
   -webkit-transition: all 0.4s ease-in-out;
@@ -2505,7 +2504,7 @@ textarea {
 }
 
 .ixl-cta-section {
-  background: #F9E58F;
+  background: #39a7fff5;
   padding: 86px 0;
 }
 @media (max-width: 767px) {

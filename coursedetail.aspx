@@ -166,8 +166,8 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
 
-    <!-- New Hero Section -->
-    <section class="ixl-hero-section">
+  <!-- New Hero Section -->
+        <section class="ixl-hero-section">
         <div class="container">
             <nav aria-label="breadcrumb"
                 style="background: url('images/breadcrumb-bg.jpg') center/cover no-repeat; padding: 40px 25px; border-radius: 12px;">
