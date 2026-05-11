@@ -4,7 +4,7 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Web.Services;
-
+using System.Web.Script.Services;
 public partial class _home : System.Web.UI.Page
 {
     // CONNECTION STRING
@@ -20,37 +20,9 @@ public partial class _home : System.Web.UI.Page
         }
     }
 
-    // ================= SEARCH COURSES =================
-    [WebMethod]
-    public static List<string> GetCourses(string prefix)
-    {
-        List<string> courses = new List<string>();
+ 
 
-        string cs = ConfigurationManager.ConnectionStrings["course"].ConnectionString;
 
-        using (SqlConnection con = new SqlConnection(cs))
-        {
-            string query = @"SELECT TOP 10 course_name
-                         FROM course
-                         WHERE course_name LIKE '%' + @prefix + '%'
-                         ORDER BY course_name";
-
-            SqlCommand cmd = new SqlCommand(query, con);
-
-            cmd.Parameters.AddWithValue("@prefix", prefix);
-
-            con.Open();
-
-            SqlDataReader dr = cmd.ExecuteReader();
-
-            while (dr.Read())
-            {
-                courses.Add(dr["course_name"].ToString());
-            }
-        }
-
-        return courses;
-    }
 
     // ================= LOAD BLOGS =================
     private void LoadBlogs()

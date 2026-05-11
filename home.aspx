@@ -14,39 +14,47 @@
             --white: #ffffff;
         }
 
-        /* --- Suggestion Box (Search) --- */
-        .suggestion-box {
-            position: absolute;
-            top: 100%;
-            left: 0;
-            width: 100%;
-            background: var(--white);
-            border-radius: 10px;
-            margin-top: 5px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            z-index: 999;
-            display: none;
-            max-height: 250px;
-            overflow-y: auto;
-            padding: 0;
-            list-style: none;
-        }
+        /* SEARCH BOX */
+.hero-search-box {
+    position: relative;
+    z-index: 9999;
 
-            .suggestion-box li {
-                padding: 10px 15px;
-                cursor: pointer;
-                transition: 0.2s;
-                border-bottom: 1px solid #f8fafc;
-            }
+}
 
-                .suggestion-box li:last-child {
-                    border-bottom: none;
-                }
+.suggestion-box {
+    position: absolute;
+    top: 72px;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    border-radius: 20px;
+    padding: 8px 0;
+    display: none;
+    z-index: 99999;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+    border: 1px solid #eee;
+    max-height: 300px;
+    overflow-y: auto;
+}
 
-                .suggestion-box li:hover {
-                    background: #f1f1f1;
-                }
+.suggestion-box li {
+    padding: 14px 22px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: 0.3s;
+}
 
+.suggestion-box li:hover {
+    background: #f3f7ff;
+    color: #0070f3;
+}
+#searchInput {
+    border-radius: 60px 0 0 60px !important;
+}
+
+.hero-search-box .btn {
+    border-radius: 0 60px 60px 0 !important;
+}
         /* --- Header Section --- */
         .header {
             margin-top: 5%;
@@ -374,72 +382,99 @@
             <div class="ixl-hero-one">
                 <div class="row gy-4 align-items-center justify-content-center justify-content-xl-between">
 
-                    <!-- LEFT CONTENT -->
-                    <div class="col-12 col-lg-12 col-xl-5">
-                        <div class="ixl-hero-one-wrapper">
+    <!-- LEFT CONTENT -->
+    <div class="col-12 col-lg-12 col-xl-5">
 
-                            <h1 class="text-anime-style-2">Learn IT Skills & Build Your Career
-                            </h1>
+        <div class="ixl-hero-one-wrapper">
 
-                            <p data-aos="fade-up">
-                                Search and explore the best IT courses like Web Development,
-                            AI, Data Science and more.
-                            </p>
+            <h1 class="text-anime-style-2">
+                Learn IT Skills & Build Your Career
+            </h1>
 
-                            <div class="hero-search-box mt-4 position-relative" data-aos="fade-up">
-                                <form action="coursedetail.aspx" method="get" autocomplete="off">
+            <p data-aos="fade-up">
+                Search and explore the best IT courses like Web Development,
+                AI, Data Science and more.
+            </p>
 
-                                    <div class="input-group shadow-lg rounded-pill overflow-hidden hero-search-box position-relative">
+            <!-- SEARCH BOX -->
+            <div class="hero-search-box mt-4 position-relative"
+    data-aos="fade-up">
 
-                                        <!-- SEARCH INPUT -->
-                                        <input type="text"
-                                            id="searchInput"
-                                            name="course"
-                                            class="form-control border-0 px-4 py-3"
-                                            placeholder="Search courses..."
-                                            onkeyup="showSuggestions(this.value)" />
+<div class="input-group shadow-lg rounded-pill position-relative">
+        <!-- SEARCH INPUT -->
+       <input type="text"
+    id="searchInput"
+    name="course"
+    class="form-control border-0 px-4 py-3"
+    placeholder="Search courses..."
+    onkeyup="showSuggestions(this.value)" />
 
-                                        <!-- SEARCH BUTTON -->
-                                        <button type="submit" class="btn btn-primary px-4">
-                                            <i class="fa fa-search"></i>
-                                        </button>
+        <!-- SEARCH BUTTON -->
+        <button type="button"
+            onclick="searchCourse()"
+            class="btn btn-primary px-4">
 
-                                        <!-- SUGGESTION BOX -->
-                                        <ul id="suggestionBox"
-                                            class="suggestion-box list-unstyled">
-                                        </ul>
+            <i class="fa fa-search"></i>
+        </button>
 
-                                    </div>
+        <!-- SUGGESTION BOX -->
+        <ul id="suggestionBox"
+            class="suggestion-box list-unstyled">
+        </ul>
 
-                                </form>
+    </div>
 
+</div>
 
-                            </div>
+        </div>
 
+    </div>
 
+    <!-- RIGHT IMAGES -->
+    <div class="col-12 col-lg-10 col-xl-6">
 
-                        </div>
-                    </div>
+        <div class="ixl-hero-one-images">
 
-                    <!-- RIGHT IMAGES -->
-                    <div class="col-12 col-lg-10 col-xl-6">
-                        <div class="ixl-hero-one-images">
-                            <img src="assets/images/home-v1/hero/hero-main.png" class="main-img"
-                                data-aos="zoom-in-up" alt="hero image">
-                            <img src="assets/images/home-v1/hero/hero-one.png" class="img-1"
-                                data-aos="zoom-in-left" data-aos-delay="400" data-aos-duration="1200">
-                            <img src="assets/images/home-v1/hero/hero-two.png" class="img-2"
-                                data-aos="zoom-in-left" data-aos-delay="600" data-aos-duration="1400">
-                            <img src="assets/images/home-v1/hero/hero-04.png" class="img-3"
-                                data-aos="zoom-in-right" data-aos-delay="800" data-aos-duration="1600">
-                            <img src="assets/images/home-v1/hero/hero-03.png" class="img-4"
-                                data-aos="zoom-in-right" data-aos-delay="1000" data-aos-duration="1800">
-                            <img src="assets/images/home-v1/hero/hero-shape.svg" class="img-5"
-                                data-aos="zoom-in-up" data-aos-delay="1200" data-aos-duration="2000">
-                        </div>
-                    </div>
+            <img src="assets/images/home-v1/hero/hero-main.png"
+                class="main-img"
+                data-aos="zoom-in-up"
+                alt="hero image">
 
-                </div>
+            <img src="assets/images/home-v1/hero/hero-one.png"
+                class="img-1"
+                data-aos="zoom-in-left"
+                data-aos-delay="400"
+                data-aos-duration="1200">
+
+            <img src="assets/images/home-v1/hero/hero-two.png"
+                class="img-2"
+                data-aos="zoom-in-left"
+                data-aos-delay="600"
+                data-aos-duration="1400">
+
+            <img src="assets/images/home-v1/hero/hero-04.png"
+                class="img-3"
+                data-aos="zoom-in-right"
+                data-aos-delay="800"
+                data-aos-duration="1600">
+
+            <img src="assets/images/home-v1/hero/hero-03.png"
+                class="img-4"
+                data-aos="zoom-in-right"
+                data-aos-delay="1000"
+                data-aos-duration="1800">
+
+            <img src="assets/images/home-v1/hero/hero-shape.svg"
+                class="img-5"
+                data-aos="zoom-in-up"
+                data-aos-delay="1200"
+                data-aos-duration="2000">
+
+        </div>
+
+    </div>
+
+</div>
             </div>
         </div>
     </section>
@@ -950,8 +985,6 @@
 
 
 
-
-
     <script>
 
         async function showSuggestions(value) {
@@ -960,73 +993,103 @@
 
             box.innerHTML = "";
 
+            // EMPTY INPUT
             if (value.trim() === "") {
 
                 box.style.display = "none";
-
                 return;
             }
 
             try {
 
-                const response = await fetch("<%= ResolveUrl("~/home.aspx/GetCourses") %>", {
+                const response =
+                    await fetch("CourseSuggestion.ashx?term=" + encodeURIComponent(value));
 
-                method: "POST",
+                const courses = await response.json();
 
-                headers: {
-                    "Content-Type": "application/json; charset=utf-8"
-                },
-
-                body: JSON.stringify({
-                    prefix: value
-                })
-
-            });
-
-            const data = await response.json();
-
-            const courses = data.d;
-
-            if (!courses || courses.length === 0) {
-
-                box.style.display = "none";
-
-                return;
-            }
-
-            courses.forEach(function (item) {
-
-                let li = document.createElement("li");
-
-                li.innerHTML = item;
-
-                li.onclick = function () {
-
-                    document.getElementById("searchInput").value = item;
+                // NO DATA
+                if (courses.length === 0) {
 
                     box.style.display = "none";
-                };
+                    return;
+                }
 
-                box.appendChild(li);
+                // CREATE SUGGESTIONS
+                courses.forEach(function (item) {
+
+                    let li = document.createElement("li");
+
+                    // SHOW COURSE NAME
+                    li.innerHTML = item.course_name;
+
+                    // CLICK SUGGESTION
+                    li.onclick = function () {
+
+                        // SHOW TEXT IN SEARCH BAR
+                        document.getElementById("searchInput").value =
+                            item.course_name;
+
+                        // HIDE BOX
+                        box.style.display = "none";
+
+                        // REDIRECT WITH ID
+                        setTimeout(function () {
+
+                            window.location.href =
+                                "coursedetail.aspx?id=" + item.id;
+
+                        }, 300);
+                    };
+
+                    box.appendChild(li);
+                });
+
+                box.style.display = "block";
+            }
+            catch (error) {
+
+                console.log(error);
+            }
+        }
+
+        // SEARCH BUTTON CLICK
+        function searchCourse() {
+
+            let value =
+                document.getElementById("searchInput").value;
+
+            if (value.trim() !== "") {
+
+                window.location.href =
+                    "coursedetail.aspx?course=" + encodeURIComponent(value);
+            }
+        }
+
+        // ENTER KEY SEARCH
+        document.getElementById("searchInput")
+            .addEventListener("keypress", function (e) {
+
+                if (e.key === "Enter") {
+
+                    e.preventDefault();
+
+                    searchCourse();
+                }
             });
 
-            box.style.display = "block";
+        // CLICK OUTSIDE HIDE
+        document.addEventListener("click", function (e) {
 
-        }
-        catch (err) {
+            const searchBox =
+                document.querySelector(".hero-search-box");
 
-            console.log(err);
-        }
-    }
+            if (!searchBox.contains(e.target)) {
 
-    document.addEventListener("click", function (e) {
+                document.getElementById("suggestionBox").style.display = "none";
+            }
+        });
 
-        if (!e.target.closest(".hero-search-box")) {
-
-            document.getElementById("suggestionBox").style.display = "none";
-        }
-    });
-
-    </script>
+</script>
+    
 </asp:Content>
 
