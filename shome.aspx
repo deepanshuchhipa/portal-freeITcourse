@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="home.aspx.cs" Inherits="_home" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="shome.aspx.cs" Inherits="_shome" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <style>
@@ -375,7 +375,7 @@
 
     <!-- hero section start -->
     <section class="ixl-hero-one bg-cover"
-        style="background: url('assets/images/home-v1/hero/hero-bg.png');">
+        style="background: url('<%= ResolveUrl("~/assets/images/home-v1/hero/hero-bg.png") %>');">
         <div class="container">
             <div class="ixl-hero-one">
                 <div class="row gy-4 align-items-center justify-content-center justify-content-xl-between">
@@ -427,42 +427,42 @@
 
         <div class="ixl-hero-one-images">
 
-            <img src="assets/images/home-v1/hero/hero-main.png"
-                class="main-img"
-                data-aos="zoom-in-up"
-                alt="hero image">
+    <img src="<%= ResolveUrl("~/assets/images/home-v1/hero/hero-main.png") %>"
+        class="main-img"
+        data-aos="zoom-in-up"
+        alt="hero image">
 
-            <img src="assets/images/home-v1/hero/hero-one.png"
-                class="img-1"
-                data-aos="zoom-in-left"
-                data-aos-delay="400"
-                data-aos-duration="1200">
+    <img src="<%= ResolveUrl("~/assets/images/home-v1/hero/hero-one.png") %>"
+        class="img-1"
+        data-aos="zoom-in-left"
+        data-aos-delay="400"
+        data-aos-duration="1200">
 
-            <img src="assets/images/home-v1/hero/hero-two.png"
-                class="img-2"
-                data-aos="zoom-in-left"
-                data-aos-delay="600"
-                data-aos-duration="1400">
+    <img src="<%= ResolveUrl("~/assets/images/home-v1/hero/hero-two.png") %>"
+        class="img-2"
+        data-aos="zoom-in-left"
+        data-aos-delay="600"
+        data-aos-duration="1400">
 
-            <img src="assets/images/home-v1/hero/hero-04.png"
-                class="img-3"
-                data-aos="zoom-in-right"
-                data-aos-delay="800"
-                data-aos-duration="1600">
+    <img src="<%= ResolveUrl("~/assets/images/home-v1/hero/hero-04.png") %>"
+        class="img-3"
+        data-aos="zoom-in-right"
+        data-aos-delay="800"
+        data-aos-duration="1600">
 
-            <img src="assets/images/home-v1/hero/hero-03.png"
-                class="img-4"
-                data-aos="zoom-in-right"
-                data-aos-delay="1000"
-                data-aos-duration="1800">
+    <img src="<%= ResolveUrl("~/assets/images/home-v1/hero/hero-03.png") %>"
+        class="img-4"
+        data-aos="zoom-in-right"
+        data-aos-delay="1000"
+        data-aos-duration="1800">
 
-            <img src="assets/images/home-v1/hero/hero-shape.svg"
-                class="img-5"
-                data-aos="zoom-in-up"
-                data-aos-delay="1200"
-                data-aos-duration="2000">
+    <img src="<%= ResolveUrl("~/assets/images/home-v1/hero/hero-shape.svg") %>"
+        class="img-5"
+        data-aos="zoom-in-up"
+        data-aos-delay="1200"
+        data-aos-duration="2000">
 
-        </div>
+</div>
 
     </div>
 
@@ -490,7 +490,7 @@
                             <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
                                 <div class="ixl-feature-item-one">
                                     <div class="icon">
-                                        <img src="assets/images/home-v1/feature/feature-01.svg"
+                                        <img src="<%= ResolveUrl("~/assets/images/home-v1/feature/feature-01.svg") %>"
                                             alt="Web Development" class="img-fluid">
                                     </div>
 
@@ -516,8 +516,9 @@
                             <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="600">
                                 <div class="ixl-feature-item-one">
                                     <div class="icon">
-                                        <img src="assets/images/home-v1/feature/feature-02.svg"
-                                            alt="Programming" class="img-fluid">
+                                        <img src="<%= ResolveUrl("~/assets/images/home-v1/feature/feature-02.svg") %>"
+    alt="Programming"
+    class="img-fluid">
                                     </div>
 
                                     <div class="content">
@@ -542,8 +543,9 @@
                             <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="900">
                                 <div class="ixl-feature-item-one">
                                     <div class="icon">
-                                        <img src="assets/images/home-v1/feature/feature-03.svg"
-                                            alt="Career Growth" class="img-fluid">
+                                      <img src="<%= ResolveUrl("~/assets/images/home-v1/feature/feature-03.svg") %>"
+    alt="Career Growth"
+    class="img-fluid">
                                     </div>
 
                                     <div class="content">
@@ -568,10 +570,10 @@
                     </div>
                 </div>
 
-                <!-- Shape -->
-                <img src="assets/images/home-v1/feature/shape.svg"
-                    class="fature-one-shape img-fluid parallax-move-left"
-                    alt="feature-shape">
+               <!-- Shape -->
+<img src="<%= ResolveUrl("~/assets/images/home-v1/feature/shape.svg") %>"
+    class="fature-one-shape img-fluid parallax-move-left"
+    alt="feature-shape">
             </div>
         </div>
     </section>
@@ -585,35 +587,35 @@
 
                     <!-- Left Images -->
                     <div class="col-lg-6">
-                        <div class="ixl-about-one-images">
+    <div class="ixl-about-one-images">
 
-                            <img src="assets/images/home-v1/about/about-line.png"
-                                class="image-01"
-                                alt="about-line">
+        <img src="<%= ResolveUrl("~/assets/images/home-v1/about/about-line.png") %>"
+            class="image-01"
+            alt="about-line">
 
-                            <img src="assets/images/home-v1/about/about-01.png"
-                                class="image-02 parallax-img-down"
-                                alt="IT Course">
+        <img src="<%= ResolveUrl("~/assets/images/home-v1/about/about-01.png") %>"
+            class="image-02 parallax-img-down"
+            alt="IT Course">
 
-                            <img src="assets/images/home-v1/about/about-02.png"
-                                class="image-03"
-                                alt="Learning">
+        <img src="<%= ResolveUrl("~/assets/images/home-v1/about/about-02.png") %>"
+            class="image-03"
+            alt="Learning">
 
-                            <!-- Small Box -->
-                            <div class="img-box parallax-move-left">
-                                <div class="icon">
-                                    <img src="assets/images/home-v1/about/about-icon-03.svg"
-                                        alt="Students">
-                                </div>
+        <!-- Small Box -->
+        <div class="img-box parallax-move-left">
+            <div class="icon">
+                <img src="<%= ResolveUrl("~/assets/images/home-v1/about/about-icon-03.svg") %>"
+                    alt="Students">
+            </div>
 
-                                <div class="img-box-content">
-                                    <p class="ixl-heading-sm mb-2">10K+ Students</p>
-                                    <span>Learning Daily Online</span>
-                                </div>
-                            </div>
+            <div class="img-box-content">
+                <p class="ixl-heading-sm mb-2">10K+ Students</p>
+                <span>Learning Daily Online</span>
+            </div>
+        </div>
 
-                        </div>
-                    </div>
+    </div>
+</div>
 
                     <!-- Right Content -->
                     <div class="col-lg-5">
@@ -632,29 +634,29 @@
                             <!-- Info Box -->
                             <div class="ixl-about-info-wrapper">
 
-                                <div class="ixl-about-info"
-                                    data-aos="fade-up"
-                                    data-aos-duration="1200">
+    <div class="ixl-about-info"
+        data-aos="fade-up"
+        data-aos-duration="1200">
 
-                                    <img src="assets/images/home-v1/about/about-icon-01.svg"
-                                        alt="Practical Learning">
+        <img src="<%= ResolveUrl("~/assets/images/home-v1/about/about-icon-01.svg") %>"
+            alt="Practical Learning">
 
-                                    <h2 class="ixl-heading-sm">Practical Learning with Real Projects
-                                    </h2>
-                                </div>
+        <h2 class="ixl-heading-sm">Practical Learning with Real Projects
+        </h2>
+    </div>
 
-                                <div class="ixl-about-info"
-                                    data-aos="fade-up"
-                                    data-aos-duration="1500">
+    <div class="ixl-about-info"
+        data-aos="fade-up"
+        data-aos-duration="1500">
 
-                                    <img src="assets/images/home-v1/about/about-icon-02.svg"
-                                        alt="Career Support">
+        <img src="<%= ResolveUrl("~/assets/images/home-v1/about/about-icon-02.svg") %>"
+            alt="Career Support">
 
-                                    <h2 class="ixl-heading-sm">Build Skills for IT Career Growth
-                                    </h2>
-                                </div>
+        <h2 class="ixl-heading-sm">Build Skills for IT Career Growth
+        </h2>
+    </div>
 
-                            </div>
+</div>
 
                         </div>
                     </div>
@@ -743,170 +745,82 @@
 
     <!-- contact form-->
     <section class="ixl-contact-one mt-120">
-    <div class="container">
-
-        <div class="ixl-contact-wrapper ptb-120">
-
-            <div class="row">
-
-                <!-- LEFT CONTENT -->
-                <div class="col-lg-4">
-
-                    <h2 class="ixl-heading-xl text-anime-style-2 mb-2 mb-lg-4">
-                        Contact For Urgent Service
-                    </h2>
-
-                    <p class="mb-3 mb-lg-0">
-                        It is a long established fact that a reader
-                        will be distracted by the readable content
-                    </p>
-
-                </div>
-
-                <!-- FORM SECTION -->
-                <div class="col-lg-8"
-                    data-aos="fade-up"
-                    data-aos-delay="400">
-
-                    <!-- REMOVE FORM TAG -->
-                    <div class="form-style-two">
-
-                        <div class="row">
-
-                            <!-- NAME -->
-                            <div class="col-6 col-md-6 col-lg-4 mb-4">
-
-                                <div class="ixl-contact-form-group">
-
-                                    <asp:TextBox ID="txtName"
-                                        runat="server"
-                                        CssClass="form-control"
-                                        placeholder="Name"></asp:TextBox>
-
-                                </div>
-
-                            </div>
-
-                            <!-- EMAIL -->
-                            <div class="col-6 col-md-6 col-lg-4 mb-4">
-
-                                <div class="ixl-contact-form-group">
-
-                                    <asp:TextBox ID="txtEmail"
-                                        runat="server"
-                                        TextMode="Email"
-                                        CssClass="form-control"
-                                        placeholder="Email"></asp:TextBox>
-
-                                </div>
-
-                            </div>
-
-                            <!-- DATE -->
-                            <div class="col-6 col-md-6 col-lg-4 mb-4">
-
-                                <div class="ixl-contact-form-group">
-
-                                    <asp:TextBox ID="txtDate"
-                                        runat="server"
-                                        CssClass="form-control"
-                                        placeholder="Date"></asp:TextBox>
-
-                                </div>
-
-                            </div>
-
-                            <!-- ADDRESS -->
-                            <div class="col-6 col-md-6 col-lg-4 mb-4">
-
-                                <div class="ixl-contact-form-group">
-
-                                    <asp:TextBox ID="txtAddress"
-                                        runat="server"
-                                        CssClass="form-control"
-                                        placeholder="Your Address"></asp:TextBox>
-
-                                </div>
-
-                            </div>
-
-                            <!-- PHONE -->
-                            <div class="col-6 col-md-6 col-lg-4 mb-4">
-
-                                <div class="ixl-contact-form-group">
-
-                                    <asp:TextBox ID="txtPhone"
-                                        runat="server"
-                                        CssClass="form-control"
-                                        placeholder="Phone Number"></asp:TextBox>
-
-                                </div>
-
-                            </div>
-
-                            <!-- COURSE DROPDOWN -->
-                            <div class="col-6 col-md-6 col-lg-4 mb-4">
-
-                                <div class="ixl-contact-form-group">
-
-                                    <asp:DropDownList ID="ddlCourse"
-                                        runat="server"
-                                        CssClass="form-control">
-
-                                    </asp:DropDownList>
-
-                                </div>
-
-                            </div>
-
-                            <!-- MESSAGE -->
-                            <div class="col-12 mb-4">
-
-                                <div class="ixl-contact-form-group">
-
-                                    <asp:TextBox ID="txtMessage"
-                                        runat="server"
-                                        TextMode="MultiLine"
-                                        Rows="5"
-                                        CssClass="form-control"
-                                        placeholder="Your Message"></asp:TextBox>
-
-                                </div>
-
-                            </div>
-
-                            <!-- BUTTON -->
-                            <div class="col-12">
-
-                                <asp:Button ID="btnSubmit"
-                                    runat="server"
-                                    Text="Send Message"
-                                    CssClass="btn-style-4"
-                                    OnClick="btnSubmit_Click" />
-
-                            </div>
-
-                        </div>
-
+        <div class="container">
+            <div class="ixl-contact-wrapper ptb-120">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <h2 class="ixl-heading-xl text-anime-style-2 mb-2 mb-lg-4">Contact For Urgent
+                                        Service</h2>
+                        <p class="mb-3 mb-lg-0 ">
+                            It is a long established fact that a reader
+                                        will be distracted by the readable
+                                        content
+                        </p>
                     </div>
-
+                    <div class="col-lg-8" data-aos="fade-up" data-aos-delay="400">
+                        <form action="#" class="form-style-two">
+                            <div class="row">
+                                <div class="col-6 col-md-6 col-lg-4 mb-4">
+                                    <div class="ixl-contact-form-group">
+                                        <input type="text" placeholder="Name" required>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-6 col-lg-4 mb-4">
+                                    <div class="ixl-contact-form-group">
+                                        <input type="email" placeholder="Email" required>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-6 col-lg-4 mb-4">
+                                    <div class="ixl-contact-form-group">
+                                        <input type="text" placeholder="Date" required>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-6 col-lg-4 mb-4">
+                                    <div class="ixl-contact-form-group">
+                                        <input type="text" placeholder="Your Addresss" required>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-6 col-lg-4 mb-4">
+                                    <div class="ixl-contact-form-group">
+                                        <input type="text" placeholder="Phone Number" required>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-6 col-lg-4 mb-4">
+                                    <div class="ixl-contact-form-group">
+                                        <select id="select-service">
+                                            <option value="select-service">Select Service</option>
+                                            <option value="contnet-wizards">Content Wizards</option>
+                                            <option value="cloud-fusion">Cloud Fusion</option>
+                                            <option value="flexi-cloud">Flexi Cloud</option>
+                                            <option value="cloud-cyne">
+                                            Cloud Sync/option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-12 mb-4">
+                                    <div class="ixl-contact-form-group">
+                                        <textarea placeholder="Your Message" required></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn-style-4">
+                                        <span>Send
+                                                        Message</span></button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                 </div>
+               <img src="<%= ResolveUrl("~/assets/images/home-v1/form/shape-02.png") %>"
+    alt="contact-page-shape"
+    class="parallax-move-left d-none d-lg-flex ixl-contact-shape-02">
 
+<img src="<%= ResolveUrl("~/assets/images/home-v1/form/shape-01.png") %>"
+    alt="contact-page-shape"
+    class="parallax-move-right d-none d-lg-flex ixl-contact-shape-01">
             </div>
-
-            <!-- SHAPES -->
-            <img src="<%= ResolveUrl("~/assets/images/home-v1/form/shape-02.png") %>"
-                alt="contact-page-shape"
-                class="parallax-move-left d-none d-lg-flex ixl-contact-shape-02">
-
-            <img src="<%= ResolveUrl("~/assets/images/home-v1/form/shape-01.png") %>"
-                alt="contact-page-shape"
-                class="parallax-move-right d-none d-lg-flex ixl-contact-shape-01">
-
         </div>
-
-    </div>
-</section>
+    </section>
 
     <!-- blog posts -->
     <section class="ixl-blog-post pt-120">
@@ -1049,8 +963,9 @@
     <section class="ixl-cta-section">
         <div class="container">
             <div class="ixl-cta-wrappper">
-                <img src="assets/images/home-v1/cta/cta.png" class="img-fluid" alt="cta">
-                <div class="content">
+<img src="<%= ResolveUrl("~/assets/images/home-v1/cta/cta.png") %>"
+    class="img-fluid"
+    alt="cta">                <div class="content">
                     <h2 class="ixl-heading-xl text-anime-style-2">Our Passion Outstanding Results</h2>
                     <p class="desc ">
                         It is a long established fact that a reader will be
