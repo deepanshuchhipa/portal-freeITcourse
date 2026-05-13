@@ -28,70 +28,241 @@
                 <section class="pt-120">
                     <div class="container">
                         <div class="ixl-contact-page-wrapper">
-                            <div class="row">
-                                <div class="col-lg-7">
-                                    <div class="ixl-contact-page-form mb-5 mb-lg-0" data-aos="fade-up"
-                                        data-aos-duration="1500">
-                                        <h1 class="ixl-heading-xl">Feel free to messege</h1>
-                                        <p>Aliquam eros justo, posuere loborti viverra lao ullamcorper posuere viverra
-                                            liquam eros justo, posuere lobortis non, viverra laoreet </p>
-                                        <form action="#">
-                                            <div class="row">
-                                                <div class="col-12 mb-30">
-                                                    <input type="text" placeholder="Your Name" required>
-                                                </div>
-                                                <div class="col-md-6 mb-30">
-                                                    <input type="email" placeholder="Email" required>
-                                                </div>
-                                                <div class="col-md-6 mb-30">
-                                                    <input type="email" placeholder="Phone" required>
-                                                </div>
-                                                <div class="col-12 mb-30">
-                                                    <textarea name="message" rows="6" placeholder="Your Message"
-                                                        required></textarea>
-                                                </div>
-                                                <div class="col-12">
-                                                    <button type="submit" class="ixl-contact-btn">Send a
-                                                        Message</button>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                                <div class="col-lg-5 d-flex align-items-center">
-                                    <div class="ixl-contact-info-wrapper" data-aos="fade-up" data-aos-duration="1500"
-                                        data-aos-delay="900">
-                                        <div class="ixl-contact-info-item">
-                                            <div class="icon">
-                                                <i class="fa-solid fa-phone"></i>
-                                            </div>
-                                            <div class="info">
-                                                <h2 class="ixl-heading-sm">Phone</h2>
-                                                <a href="tel:(808)555-0111">(808) 555-0111</a>
-                                            </div>
-                                        </div>
-                                        <div class="ixl-contact-info-item">
-                                            <div class="icon">
-                                                <i class="fa-solid fa-envelope"></i>
-                                            </div>
-                                            <div class="info">
-                                                <h2 class="ixl-heading-sm">E-mail</h2>
-                                                <a href="mailto:abc@gmail.com">abc@gmail.com</a>
-                                            </div>
-                                        </div>
-                                        <div class="ixl-contact-info-item mb-0">
-                                            <div class="icon">
-                                                <i class="fa-solid fa-location-dot"></i>
-                                            </div>
-                                            <div class="info">
-                                                <h2 class="ixl-heading-sm">Localtion</h2>
-                                                <a href="#">Dhaka 102, utl 1216, road Dhaka 102, utl 1216 </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+
+    <div class="row">
+
+        <!-- CONTACT FORM -->
+        <div class="col-lg-7">
+
+            <div class="ixl-contact-page-form mb-5 mb-lg-0"
+                data-aos="fade-up"
+                data-aos-duration="1500">
+
+                <h1 class="ixl-heading-xl">
+                    Feel free to message
+                </h1>
+
+                <p>
+                    Aliquam eros justo, posuere loborti viverra
+                    lao ullamcorper posuere viverra liquam eros justo.
+                </p>
+
+                <div>
+
+                    <div class="row">
+
+                        <!-- NAME -->
+                        <div class="col-12 mb-30">
+
+                            <asp:TextBox ID="txtContactName"
+                                runat="server"
+                                CssClass="form-control"
+                                placeholder="Your Name"></asp:TextBox>
+
                         </div>
+
+                        <!-- EMAIL -->
+                        <div class="col-md-6 mb-30">
+
+                            <asp:TextBox ID="txtContactEmail"
+                                runat="server"
+                                TextMode="Email"
+                                CssClass="form-control"
+                                placeholder="Email"></asp:TextBox>
+
+                        </div>
+
+                        <!-- PHONE -->
+                        <div class="col-md-6 mb-30">
+
+                            <asp:TextBox ID="txtContactPhone"
+                                runat="server"
+                                CssClass="form-control"
+                                MaxLength="10"
+                                placeholder="Phone"></asp:TextBox>
+
+                        </div>
+
+                        <!-- MESSAGE -->
+                        <div class="col-12 mb-30">
+
+                            <asp:TextBox ID="txtContactMessage"
+                                runat="server"
+                                TextMode="MultiLine"
+                                Rows="6"
+                                CssClass="form-control"
+                                placeholder="Your Message"></asp:TextBox>
+
+                        </div>
+
+                        <!-- BUTTON -->
+                        <div class="col-12">
+
+                            <asp:Button ID="btnContactSubmit"
+                                runat="server"
+                                Text="Send a Message"
+                                CssClass="ixl-contact-btn"
+                                OnClick="btnContactSubmit_Click"
+                                OnClientClick="return validateContactForm();" />
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- CONTACT INFO -->
+        <div class="col-lg-5 d-flex align-items-center">
+
+            <div class="ixl-contact-info-wrapper"
+                data-aos="fade-up"
+                data-aos-duration="1500"
+                data-aos-delay="900">
+
+                <!-- PHONE -->
+                <div class="ixl-contact-info-item">
+
+                    <div class="icon">
+                        <i class="fa-solid fa-phone"></i>
+                    </div>
+
+                    <div class="info">
+
+                        <h2 class="ixl-heading-sm">Phone</h2>
+
+                        <a href="tel:+919829047112">
+                            +91 9829047112
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <!-- EMAIL -->
+                <div class="ixl-contact-info-item">
+
+                    <div class="icon">
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+
+                    <div class="info">
+
+                        <h2 class="ixl-heading-sm">E-mail</h2>
+
+                        <a href="mailto:info@blsonicollege.in">
+                            info@blsonicollege.in
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <!-- ADDRESS -->
+                <div class="ixl-contact-info-item mb-0">
+
+                    <div class="icon">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+
+                    <div class="info">
+
+                        <h2 class="ixl-heading-sm">Location</h2>
+
+                        <a href="#">
+                            1st and 3rd Floor, GT Tower,
+                            Lal Bahadur Shastri Market,
+                            Bhilwara Rajasthan
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- VALIDATION SCRIPT -->
+<script>
+
+    function validateContactForm() {
+
+        var name =
+            document.getElementById('<%= txtContactName.ClientID %>').value.trim();
+
+        var email =
+            document.getElementById('<%= txtContactEmail.ClientID %>').value.trim();
+
+        var phone =
+            document.getElementById('<%= txtContactPhone.ClientID %>').value.trim();
+
+        var message =
+            document.getElementById('<%= txtContactMessage.ClientID %>').value.trim();
+
+        // NAME
+        if (name == "") {
+
+            alert("Please enter your name");
+
+            return false;
+        }
+
+        // EMAIL
+        if (email == "") {
+
+            alert("Please enter your email");
+
+            return false;
+        }
+
+        // EMAIL FORMAT
+        var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (!emailPattern.test(email)) {
+
+            alert("Please enter valid email");
+
+            return false;
+        }
+
+        // PHONE
+        if (phone == "") {
+
+            alert("Please enter phone number");
+
+            return false;
+        }
+
+        // PHONE VALIDATION
+        if (phone.length != 10 || isNaN(phone)) {
+
+            alert("Please enter valid 10 digit mobile number");
+
+            return false;
+        }
+
+        // MESSAGE
+        if (message == "") {
+
+            alert("Please enter message");
+
+            return false;
+        }
+
+        alert("Message submitted successfully");
+
+        return true;
+    }
+
+</script>
                     </div>
                 </section>
 

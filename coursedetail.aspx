@@ -219,38 +219,130 @@
             </div>
 
             <!-- Right Sidebar -->
-            <div class="col-lg-4">
+                       <div class="col-lg-4">
 
-                <div class="side-form-panel">
+    <div class="side-form-panel">
 
-                    <h4>Enrollment Inquiry</h4>
+        <h4>Enrollment Inquiry</h4>
 
-                    <p class="text-muted small mb-4">
-                        Interested in this course? Fill out the form and we'll contact you.
-                    </p>
+        <p class="text-muted small mb-4">
+            Interested in this course? Fill out the form and we'll contact you.
+        </p>
 
-                    <div class="form-group">
-                        <label class="form-label-custom">Full Name</label>
-                        <input type="text" class="form-control-custom" placeholder="Enter your name" required />
-                    </div>
+        <!-- NAME -->
+        <div class="form-group">
 
-                    <div class="form-group">
-                        <label class="form-label-custom">Email Address</label>
-                        <input type="email" class="form-control-custom" placeholder="example@mail.com" required />
-                    </div>
+            <label class="form-label-custom">Full Name</label>
 
-                    <div class="form-group">
-                        <label class="form-label-custom">Phone Number</label>
-                        <input type="tel" class="form-control-custom" placeholder="+91 00000 00000" required />
-                    </div>
+            <asp:TextBox ID="txtSideName"
+                runat="server"
+                CssClass="form-control-custom"
+                placeholder="Enter your name"></asp:TextBox>
 
-                    <button type="submit" class="btn-submit-form">
-                        Request a Call Back
-                    </button>
+        </div>
 
-                </div>
+        <!-- EMAIL -->
+        <div class="form-group">
 
-            </div>
+            <label class="form-label-custom">Email Address</label>
+
+            <asp:TextBox ID="txtSideEmail"
+                runat="server"
+                TextMode="Email"
+                CssClass="form-control-custom"
+                placeholder="example@mail.com"></asp:TextBox>
+
+        </div>
+
+        <!-- PHONE -->
+        <div class="form-group">
+
+            <label class="form-label-custom">Phone Number</label>
+
+            <asp:TextBox ID="txtSidePhone"
+                runat="server"
+                MaxLength="10"
+                CssClass="form-control-custom"
+                placeholder="+91 00000 00000"></asp:TextBox>
+
+        </div>
+
+        <!-- HIDDEN COURSE ID -->
+        <asp:HiddenField ID="hfCourseID"
+            runat="server" />
+
+        <!-- BUTTON -->
+        <asp:Button ID="btnSideSubmit"
+            runat="server"
+            Text="Request a Call Back"
+            CssClass="btn-submit-form"
+            OnClick="btnSideSubmit_Click"
+            OnClientClick="return validateSideForm();" />
+
+    </div>
+
+</div>
+
+<!-- VALIDATION SCRIPT -->
+<script>
+
+    function validateSideForm() {
+
+        var name = document.getElementById('<%= txtSideName.ClientID %>').value.trim();
+
+        var email = document.getElementById('<%= txtSideEmail.ClientID %>').value.trim();
+
+        var phone = document.getElementById('<%= txtSidePhone.ClientID %>').value.trim();
+
+        // NAME
+        if (name == "") {
+
+            alert("Please enter your name");
+
+            return false;
+        }
+
+        // EMAIL
+        if (email == "") {
+
+            alert("Please enter your email");
+
+            return false;
+        }
+
+        // EMAIL VALIDATION
+        var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (!emailPattern.test(email)) {
+
+            alert("Please enter valid email");
+
+            return false;
+        }
+
+        // PHONE
+        if (phone == "") {
+
+            alert("Please enter phone number");
+
+            return false;
+        }
+
+        // PHONE VALIDATION
+        if (phone.length != 10 || isNaN(phone)) {
+
+            alert("Please enter valid 10 digit mobile number");
+
+            return false;
+        }
+
+        // SUCCESS
+        alert("Your enquiry has been submitted successfully");
+
+        return true;
+    }
+
+</script>
 
         </div>
 

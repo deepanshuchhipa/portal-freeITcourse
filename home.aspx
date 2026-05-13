@@ -768,7 +768,6 @@
                     data-aos="fade-up"
                     data-aos-delay="400">
 
-                    <!-- REMOVE FORM TAG -->
                     <div class="form-style-two">
 
                         <div class="row">
@@ -809,8 +808,8 @@
 
                                     <asp:TextBox ID="txtDate"
                                         runat="server"
-                                        CssClass="form-control"
-                                        placeholder="Date"></asp:TextBox>
+                                        TextMode="Date"
+                                        CssClass="form-control"></asp:TextBox>
 
                                 </div>
 
@@ -838,6 +837,7 @@
                                     <asp:TextBox ID="txtPhone"
                                         runat="server"
                                         CssClass="form-control"
+                                        MaxLength="10"
                                         placeholder="Phone Number"></asp:TextBox>
 
                                 </div>
@@ -882,7 +882,8 @@
                                     runat="server"
                                     Text="Send Message"
                                     CssClass="btn-style-4"
-                                    OnClick="btnSubmit_Click" />
+                                    OnClick="btnSubmit_Click"
+                                    OnClientClick="return validateForm();" />
 
                             </div>
 
@@ -907,6 +908,89 @@
 
     </div>
 </section>
+
+<!-- VALIDATION SCRIPT -->
+<script>
+
+    function validateForm() {
+
+        var name = document.getElementById('<%= txtName.ClientID %>').value.trim();
+
+        var email = document.getElementById('<%= txtEmail.ClientID %>').value.trim();
+
+        var date = document.getElementById('<%= txtDate.ClientID %>').value.trim();
+
+        var address = document.getElementById('<%= txtAddress.ClientID %>').value.trim();
+
+        var phone = document.getElementById('<%= txtPhone.ClientID %>').value.trim();
+
+        var course = document.getElementById('<%= ddlCourse.ClientID %>').value;
+
+        var message = document.getElementById('<%= txtMessage.ClientID %>').value.trim();
+
+        // NAME
+        if (name == "") {
+            alert("Please enter your name");
+            return false;
+        }
+
+        // EMAIL
+        if (email == "") {
+            alert("Please enter your email");
+            return false;
+        }
+
+        // EMAIL FORMAT
+        var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (!emailPattern.test(email)) {
+            alert("Please enter valid email");
+            return false;
+        }
+
+        // DATE
+        if (date == "") {
+            alert("Please select date");
+            return false;
+        }
+
+        // ADDRESS
+        if (address == "") {
+            alert("Please enter address");
+            return false;
+        }
+
+        // PHONE
+        if (phone == "") {
+            alert("Please enter phone number");
+            return false;
+        }
+
+        // PHONE VALIDATION
+        if (phone.length != 10 || isNaN(phone)) {
+            alert("Please enter valid 10 digit mobile number");
+            return false;
+        }
+
+        // COURSE
+        if (course == "0") {
+            alert("Please select course");
+            return false;
+        }
+
+        // MESSAGE
+        if (message == "") {
+            alert("Please enter message");
+            return false;
+        }
+
+        // SUCCESS ALERT
+        alert("Your enquiry form has been submitted successfully");
+
+        return true;
+    }
+
+</script>
 
     <!-- blog posts -->
     <section class="ixl-blog-post pt-120">

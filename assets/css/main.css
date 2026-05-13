@@ -824,10 +824,11 @@ textarea {
 /* button style 4 */
 .btn-style-4 {
   position: relative;
+  color:white;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--theme);
+  background: #2563eb;
   overflow: hidden;
   cursor: pointer;
   border-radius: 60px;

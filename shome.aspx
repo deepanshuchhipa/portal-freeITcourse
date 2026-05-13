@@ -374,7 +374,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
 
     <!-- hero section start -->
-    <section class="ixl-hero-one bg-cover"
+       <section class="ixl-hero-one bg-cover"
         style="background: url('<%= ResolveUrl("~/assets/images/home-v1/hero/hero-bg.png") %>');">
         <div class="container">
             <div class="ixl-hero-one">
@@ -744,84 +744,255 @@
     </section>
 
     <!-- contact form-->
-    <section class="ixl-contact-one mt-120">
-        <div class="container">
-            <div class="ixl-contact-wrapper ptb-120">
-                <div class="row">
-                    <div class="col-lg-4">
-                        <h2 class="ixl-heading-xl text-anime-style-2 mb-2 mb-lg-4">Contact For Urgent
-                                        Service</h2>
-                        <p class="mb-3 mb-lg-0 ">
-                            It is a long established fact that a reader
-                                        will be distracted by the readable
-                                        content
-                        </p>
-                    </div>
-                    <div class="col-lg-8" data-aos="fade-up" data-aos-delay="400">
-                        <form action="#" class="form-style-two">
-                            <div class="row">
-                                <div class="col-6 col-md-6 col-lg-4 mb-4">
-                                    <div class="ixl-contact-form-group">
-                                        <input type="text" placeholder="Name" required>
-                                    </div>
-                                </div>
-                                <div class="col-6 col-md-6 col-lg-4 mb-4">
-                                    <div class="ixl-contact-form-group">
-                                        <input type="email" placeholder="Email" required>
-                                    </div>
-                                </div>
-                                <div class="col-6 col-md-6 col-lg-4 mb-4">
-                                    <div class="ixl-contact-form-group">
-                                        <input type="text" placeholder="Date" required>
-                                    </div>
-                                </div>
-                                <div class="col-6 col-md-6 col-lg-4 mb-4">
-                                    <div class="ixl-contact-form-group">
-                                        <input type="text" placeholder="Your Addresss" required>
-                                    </div>
-                                </div>
-                                <div class="col-6 col-md-6 col-lg-4 mb-4">
-                                    <div class="ixl-contact-form-group">
-                                        <input type="text" placeholder="Phone Number" required>
-                                    </div>
-                                </div>
-                                <div class="col-6 col-md-6 col-lg-4 mb-4">
-                                    <div class="ixl-contact-form-group">
-                                        <select id="select-service">
-                                            <option value="select-service">Select Service</option>
-                                            <option value="contnet-wizards">Content Wizards</option>
-                                            <option value="cloud-fusion">Cloud Fusion</option>
-                                            <option value="flexi-cloud">Flexi Cloud</option>
-                                            <option value="cloud-cyne">
-                                            Cloud Sync/option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-12 mb-4">
-                                    <div class="ixl-contact-form-group">
-                                        <textarea placeholder="Your Message" required></textarea>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <button type="submit" class="btn-style-4">
-                                        <span>Send
-                                                        Message</span></button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
+<section class="ixl-contact-one mt-120">
+    <div class="container">
+
+        <div class="ixl-contact-wrapper ptb-120">
+
+            <div class="row">
+
+                <!-- LEFT CONTENT -->
+                <div class="col-lg-4">
+
+                    <h2 class="ixl-heading-xl text-anime-style-2 mb-2 mb-lg-4">
+                        Contact For Urgent Service
+                    </h2>
+
+                    <p class="mb-3 mb-lg-0">
+                        It is a long established fact that a reader
+                        will be distracted by the readable content
+                    </p>
+
                 </div>
-               <img src="<%= ResolveUrl("~/assets/images/home-v1/form/shape-02.png") %>"
-    alt="contact-page-shape"
-    class="parallax-move-left d-none d-lg-flex ixl-contact-shape-02">
 
-<img src="<%= ResolveUrl("~/assets/images/home-v1/form/shape-01.png") %>"
-    alt="contact-page-shape"
-    class="parallax-move-right d-none d-lg-flex ixl-contact-shape-01">
+                <!-- FORM SECTION -->
+                <div class="col-lg-8"
+                    data-aos="fade-up"
+                    data-aos-delay="400">
+
+                    <div class="form-style-two">
+
+                        <div class="row">
+
+                            <!-- NAME -->
+                            <div class="col-6 col-md-6 col-lg-4 mb-4">
+
+                                <div class="ixl-contact-form-group">
+
+                                    <asp:TextBox ID="txtName"
+                                        runat="server"
+                                        CssClass="form-control"
+                                        placeholder="Name"></asp:TextBox>
+
+                                </div>
+
+                            </div>
+
+                            <!-- EMAIL -->
+                            <div class="col-6 col-md-6 col-lg-4 mb-4">
+
+                                <div class="ixl-contact-form-group">
+
+                                    <asp:TextBox ID="txtEmail"
+                                        runat="server"
+                                        TextMode="Email"
+                                        CssClass="form-control"
+                                        placeholder="Email"></asp:TextBox>
+
+                                </div>
+
+                            </div>
+
+                            <!-- DATE -->
+                            <div class="col-6 col-md-6 col-lg-4 mb-4">
+
+                                <div class="ixl-contact-form-group">
+
+                                    <asp:TextBox ID="txtDate"
+                                        runat="server"
+                                        TextMode="Date"
+                                        CssClass="form-control"></asp:TextBox>
+
+                                </div>
+
+                            </div>
+
+                            <!-- ADDRESS -->
+                            <div class="col-6 col-md-6 col-lg-4 mb-4">
+
+                                <div class="ixl-contact-form-group">
+
+                                    <asp:TextBox ID="txtAddress"
+                                        runat="server"
+                                        CssClass="form-control"
+                                        placeholder="Your Address"></asp:TextBox>
+
+                                </div>
+
+                            </div>
+
+                            <!-- PHONE -->
+                            <div class="col-6 col-md-6 col-lg-4 mb-4">
+
+                                <div class="ixl-contact-form-group">
+
+                                    <asp:TextBox ID="txtPhone"
+                                        runat="server"
+                                        CssClass="form-control"
+                                        MaxLength="10"
+                                        placeholder="Phone Number"></asp:TextBox>
+
+                                </div>
+
+                            </div>
+
+                            <!-- COURSE DROPDOWN -->
+                            <div class="col-6 col-md-6 col-lg-4 mb-4">
+
+                                <div class="ixl-contact-form-group">
+
+                                    <asp:DropDownList ID="ddlCourse"
+                                        runat="server"
+                                        CssClass="form-control">
+
+                                    </asp:DropDownList>
+
+                                </div>
+
+                            </div>
+
+                            <!-- MESSAGE -->
+                            <div class="col-12 mb-4">
+
+                                <div class="ixl-contact-form-group">
+
+                                    <asp:TextBox ID="txtMessage"
+                                        runat="server"
+                                        TextMode="MultiLine"
+                                        Rows="5"
+                                        CssClass="form-control"
+                                        placeholder="Your Message"></asp:TextBox>
+
+                                </div>
+
+                            </div>
+
+                            <!-- BUTTON -->
+                            <div class="col-12">
+
+                                <asp:Button ID="btnSubmit"
+                                    runat="server"
+                                    Text="Send Message"
+                                    CssClass="btn-style-4"
+                                    OnClick="btnSubmit_Click"
+                                    OnClientClick="return validateForm();" />
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
             </div>
-        </div>
-    </section>
 
+            <!-- SHAPES -->
+            <img src="<%= ResolveUrl("~/assets/images/home-v1/form/shape-02.png") %>"
+                alt="contact-page-shape"
+                class="parallax-move-left d-none d-lg-flex ixl-contact-shape-02">
+
+            <img src="<%= ResolveUrl("~/assets/images/home-v1/form/shape-01.png") %>"
+                alt="contact-page-shape"
+                class="parallax-move-right d-none d-lg-flex ixl-contact-shape-01">
+
+        </div>
+
+    </div>
+</section>
+
+<!-- VALIDATION SCRIPT -->
+<script>
+
+    function validateForm() {
+
+        var name = document.getElementById('<%= txtName.ClientID %>').value.trim();
+
+        var email = document.getElementById('<%= txtEmail.ClientID %>').value.trim();
+
+        var date = document.getElementById('<%= txtDate.ClientID %>').value.trim();
+
+        var address = document.getElementById('<%= txtAddress.ClientID %>').value.trim();
+
+        var phone = document.getElementById('<%= txtPhone.ClientID %>').value.trim();
+
+        var course = document.getElementById('<%= ddlCourse.ClientID %>').value;
+
+        var message = document.getElementById('<%= txtMessage.ClientID %>').value.trim();
+
+        // NAME
+        if (name == "") {
+            alert("Please enter your name");
+            return false;
+        }
+
+        // EMAIL
+        if (email == "") {
+            alert("Please enter your email");
+            return false;
+        }
+
+        // EMAIL FORMAT
+        var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (!emailPattern.test(email)) {
+            alert("Please enter valid email");
+            return false;
+        }
+
+        // DATE
+        if (date == "") {
+            alert("Please select date");
+            return false;
+        }
+
+        // ADDRESS
+        if (address == "") {
+            alert("Please enter address");
+            return false;
+        }
+
+        // PHONE
+        if (phone == "") {
+            alert("Please enter phone number");
+            return false;
+        }
+
+        // PHONE VALIDATION
+        if (phone.length != 10 || isNaN(phone)) {
+            alert("Please enter valid 10 digit mobile number");
+            return false;
+        }
+
+        // COURSE
+        if (course == "0") {
+            alert("Please select course");
+            return false;
+        }
+
+        // MESSAGE
+        if (message == "") {
+            alert("Please enter message");
+            return false;
+        }
+
+        // SUCCESS ALERT
+        alert("Your enquiry form has been submitted successfully");
+
+        return true;
+    }
+
+</script>
     <!-- blog posts -->
     <section class="ixl-blog-post pt-120">
         <div class="container">
