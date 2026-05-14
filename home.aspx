@@ -1,4 +1,10 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="home.aspx.cs" Inherits="_home" %>
+﻿<%@ Page
+    Title="IT Courses, Coding Classes  | FreeITLearning.com"
+    Language="C#"
+    MasterPageFile="~/MasterPage.master"
+    AutoEventWireup="true"
+    CodeFile="home.aspx.cs"
+    Inherits="_home" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <style>
@@ -15,42 +21,42 @@
         }
 
         /* SEARCH BOX */
-.hero-search-box {
-    position: relative;
-    z-index: 9999;
+        .hero-search-box {
+            position: relative;
+            z-index: 9999;
+        }
 
-}
+        .suggestion-box {
+            position: absolute;
+            top: 72px;
+            left: 0;
+            width: 100%;
+            background: #fff;
+            border-radius: 20px;
+            padding: 8px 0;
+            display: none;
+            z-index: 99999;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            border: 1px solid #eee;
+            max-height: 300px;
+            overflow-y: auto;
+        }
 
-.suggestion-box {
-    position: absolute;
-    top: 72px;
-    left: 0;
-    width: 100%;
-    background: #fff;
-    border-radius: 20px;
-    padding: 8px 0;
-    display: none;
-    z-index: 99999;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.12);
-    border: 1px solid #eee;
-    max-height: 300px;
-    overflow-y: auto;
-}
+            .suggestion-box li {
+                padding: 14px 22px;
+                cursor: pointer;
+                font-size: 15px;
+                transition: 0.3s;
+            }
 
-.suggestion-box li {
-    padding: 14px 22px;
-    cursor: pointer;
-    font-size: 15px;
-    transition: 0.3s;
-}
+                .suggestion-box li:hover {
+                    background: #f3f7ff;
+                    color: #0070f3;
+                }
 
-.suggestion-box li:hover {
-    background: #f3f7ff;
-    color: #0070f3;
-}
-#searchInput {
-    border-radius: 60px  !important;
-}
+        #searchInput {
+            border-radius: 60px !important;
+        }
 
 
         /* --- Header Section --- */
@@ -380,93 +386,91 @@
             <div class="ixl-hero-one">
                 <div class="row gy-4 align-items-center justify-content-center justify-content-xl-between">
 
-    <!-- LEFT CONTENT -->
-    <div class="col-12 col-lg-12 col-xl-5">
+                    <!-- LEFT CONTENT -->
+                    <div class="col-12 col-lg-12 col-xl-5">
 
-        <div class="ixl-hero-one-wrapper">
+                        <div class="ixl-hero-one-wrapper">
 
-            <h1 class="text-anime-style-2">
-                Learn IT Skills & Build Your Career
-            </h1>
+                            <h1 class="text-anime-style-2">Learn IT Skills & Build Your Career
+                            </h1>
 
-            <p data-aos="fade-up">
-                Search and explore the best IT courses like Web Development,
+                            <p data-aos="fade-up">
+                                Search and explore the best IT courses like Web Development,
                 AI, Data Science and more.
-            </p>
+                            </p>
 
-            <!-- SEARCH BOX -->
-            <div class="hero-search-box mt-4 position-relative"
-    data-aos="fade-up">
+                            <!-- SEARCH BOX -->
+                            <div class="hero-search-box mt-4 position-relative"
+                                data-aos="fade-up">
 
-<div class="input-group shadow-lg rounded-pill position-relative">
-        <!-- SEARCH INPUT -->
-       <input type="text"
-    id="searchInput"
-    name="course"
-    class="form-control border-0 px-4 py-3"
-    placeholder="Search courses..."
-    onkeyup="showSuggestions(this.value)" />
+                                <div class="input-group shadow-lg rounded-pill position-relative">
+                                    <!-- SEARCH INPUT -->
+                                    <input type="text"
+                                        id="searchInput"
+                                        name="course"
+                                        class="form-control border-0 px-4 py-3"
+                                        placeholder="Search courses..."
+                                        onkeyup="showSuggestions(this.value)" />
 
-      
 
-        <!-- SUGGESTION BOX -->
-        <ul id="suggestionBox"
-            class="suggestion-box list-unstyled">
-        </ul>
 
-    </div>
+                                    <!-- SUGGESTION BOX -->
+                                    <ul id="suggestionBox"
+                                        class="suggestion-box list-unstyled">
+                                    </ul>
 
-</div>
+                                </div>
 
-        </div>
+                            </div>
 
-    </div>
+                        </div>
 
-    <!-- RIGHT IMAGES -->
-    <div class="col-12 col-lg-10 col-xl-6">
+                    </div>
 
-        <div class="ixl-hero-one-images">
+                    <!-- RIGHT IMAGES -->
+                    <div class="col-12 col-lg-10 col-xl-6">
 
-            <img src="assets/images/home-v1/hero/hero-main.png"
-                class="main-img"
-                data-aos="zoom-in-up"
-                alt="hero image">
+                        <div class="ixl-hero-one-images">
 
-            <img src="assets/images/home-v1/hero/hero-one.png"
-                class="img-1"
-                data-aos="zoom-in-left"
-                data-aos-delay="400"
-                data-aos-duration="1200">
+                            <img src="assets/images/home-v1/hero/hero-main.png"
+                                class="main-img"
+                                data-aos="zoom-in-up"
+                                alt="hero image">
 
-            <img src="assets/images/home-v1/hero/hero-two.png"
-                class="img-2"
-                data-aos="zoom-in-left"
-                data-aos-delay="600"
-                data-aos-duration="1400">
+                            <img src="assets/images/home-v1/hero/hero-one.png"
+                                class="img-1"
+                                data-aos="zoom-in-left"
+                                data-aos-delay="400"
+                                data-aos-duration="1200">
 
-            <img src="assets/images/home-v1/hero/hero-04.png"
-                class="img-3"
-                data-aos="zoom-in-right"
-                data-aos-delay="800"
-                data-aos-duration="1600">
+                            <img src="assets/images/home-v1/hero/hero-two.png"
+                                class="img-2"
+                                data-aos="zoom-in-left"
+                                data-aos-delay="600"
+                                data-aos-duration="1400">
 
-            <img src="assets/images/home-v1/hero/hero-03.png"
-                class="img-4"
-                data-aos="zoom-in-right"
-                data-aos-delay="1000"
-                data-aos-duration="1800">
+                            <img src="assets/images/home-v1/hero/hero-04.png"
+                                class="img-3"
+                                data-aos="zoom-in-right"
+                                data-aos-delay="800"
+                                data-aos-duration="1600">
 
-            <img src="assets/images/home-v1/hero/hero-shape.svg"
-                class="img-5"
-                data-aos="zoom-in-up"
-                data-aos-delay="1200"
-                data-aos-duration="2000">
+                            <img src="assets/images/home-v1/hero/hero-03.png"
+                                class="img-4"
+                                data-aos="zoom-in-right"
+                                data-aos-delay="1000"
+                                data-aos-duration="1800">
 
-        </div>
+                            <img src="assets/images/home-v1/hero/hero-shape.svg"
+                                class="img-5"
+                                data-aos="zoom-in-up"
+                                data-aos-delay="1200"
+                                data-aos-duration="2000">
+                        </div>
 
-    </div>
+                    </div>
 
-</div>
+                </div>
             </div>
         </div>
     </section>
@@ -743,147 +747,147 @@
 
     <!-- contact form-->
     <section class="ixl-contact-one mt-120">
-    <div class="container">
+        <div class="container">
 
-        <div class="ixl-contact-wrapper ptb-120">
+            <div class="ixl-contact-wrapper ptb-120">
 
-            <div class="row">
+                <div class="row">
 
-                <!-- LEFT CONTENT -->
-                <div class="col-lg-4">
+                    <!-- LEFT CONTENT -->
+                    <div class="col-lg-4">
 
-                    <h2 class="ixl-heading-xl text-anime-style-2 mb-2 mb-lg-4">
-                        Contact For Urgent Service
-                    </h2>
+                        <h2 class="ixl-heading-xl text-anime-style-2 mb-2 mb-lg-4">Contact For Urgent Service
+                        </h2>
 
-                    <p class="mb-3 mb-lg-0">
-                        It is a long established fact that a reader
+                        <p class="mb-3 mb-lg-0">
+                            It is a long established fact that a reader
                         will be distracted by the readable content
-                    </p>
+                        </p>
 
-                </div>
+                    </div>
 
-                <!-- FORM SECTION -->
-                <div class="col-lg-8"
-                    data-aos="fade-up"
-                    data-aos-delay="400">
+                    <!-- FORM SECTION -->
+                    <div class="col-lg-8"
+                        data-aos="fade-up"
+                        data-aos-delay="400">
 
-                    <div class="form-style-two">
+                        <div class="form-style-two">
 
-                        <div class="row">
+                            <div class="row">
 
-                            <!-- NAME -->
-                            <div class="col-6 col-md-6 col-lg-4 mb-4">
+                                <!-- NAME -->
+                                <div class="col-6 col-md-6 col-lg-4 mb-4">
 
-                                <div class="ixl-contact-form-group">
+                                    <div class="ixl-contact-form-group">
 
-                                    <asp:TextBox ID="txtName"
-                                        runat="server"
-                                        CssClass="form-control"
-                                        placeholder="Name"></asp:TextBox>
+                                        <asp:TextBox ID="txtName"
+                                            runat="server"
+                                            CssClass="form-control"
+                                            placeholder="Name"></asp:TextBox>
 
-                                </div>
-
-                            </div>
-
-                            <!-- EMAIL -->
-                            <div class="col-6 col-md-6 col-lg-4 mb-4">
-
-                                <div class="ixl-contact-form-group">
-
-                                    <asp:TextBox ID="txtEmail"
-                                        runat="server"
-                                        TextMode="Email"
-                                        CssClass="form-control"
-                                        placeholder="Email"></asp:TextBox>
+                                    </div>
 
                                 </div>
 
-                            </div>
+                                <!-- EMAIL -->
+                                <div class="col-6 col-md-6 col-lg-4 mb-4">
 
-                            <!-- DATE -->
-                            <div class="col-6 col-md-6 col-lg-4 mb-4">
+                                    <div class="ixl-contact-form-group">
 
-                                <div class="ixl-contact-form-group">
+                                        <asp:TextBox ID="txtEmail"
+                                            runat="server"
+                                            TextMode="Email"
+                                            CssClass="form-control"
+                                            placeholder="Email"></asp:TextBox>
 
-                                    <asp:TextBox ID="txtDate"
-                                        runat="server"
-                                        TextMode="Date"
-                                        CssClass="form-control"></asp:TextBox>
-
-                                </div>
-
-                            </div>
-
-                            <!-- ADDRESS -->
-                            <div class="col-6 col-md-6 col-lg-4 mb-4">
-
-                                <div class="ixl-contact-form-group">
-
-                                    <asp:TextBox ID="txtAddress"
-                                        runat="server"
-                                        CssClass="form-control"
-                                        placeholder="Your Address"></asp:TextBox>
+                                    </div>
 
                                 </div>
 
-                            </div>
+                                <!-- DATE -->
+                                <div class="col-6 col-md-6 col-lg-4 mb-4">
 
-                            <!-- PHONE -->
-                            <div class="col-6 col-md-6 col-lg-4 mb-4">
+                                    <div class="ixl-contact-form-group">
 
-                                <div class="ixl-contact-form-group">
+                                        <asp:TextBox ID="txtDate"
+                                            runat="server"
+                                            TextMode="Date"
+                                            CssClass="form-control"></asp:TextBox>
 
-                                    <asp:TextBox ID="txtPhone"
-                                        runat="server"
-                                        CssClass="form-control"
-                                        MaxLength="10"
-                                        placeholder="Phone Number"></asp:TextBox>
-
-                                </div>
-
-                            </div>
-
-                            <!-- COURSE DROPDOWN -->
-                            <div class="col-6 col-md-6 col-lg-4 mb-4">
-
-                                <div class="ixl-contact-form-group">
-
-                                    <asp:DropDownList ID="ddlCourse"
-                                        runat="server"
-                                        CssClass="form-control">
-
-                                    </asp:DropDownList>
+                                    </div>
 
                                 </div>
 
-                            </div>
+                                <!-- ADDRESS -->
+                                <div class="col-6 col-md-6 col-lg-4 mb-4">
 
-                            <!-- MESSAGE -->
-                            <div class="col-12 mb-4">
+                                    <div class="ixl-contact-form-group">
 
-                                <div class="ixl-contact-form-group">
+                                        <asp:TextBox ID="txtAddress"
+                                            runat="server"
+                                            CssClass="form-control"
+                                            placeholder="Your Address"></asp:TextBox>
 
-                                    <asp:TextBox ID="txtMessage"
-                                        runat="server"
-                                        TextMode="MultiLine"
-                                        Rows="5"
-                                        CssClass="form-control"
-                                        placeholder="Your Message"></asp:TextBox>
+                                    </div>
 
                                 </div>
 
-                            </div>
+                                <!-- PHONE -->
+                                <div class="col-6 col-md-6 col-lg-4 mb-4">
 
-                            <!-- BUTTON -->
-                            <div class="col-12">
+                                    <div class="ixl-contact-form-group">
 
-                                <asp:Button ID="btnSubmit"
-                                    runat="server"
-                                    Text="Send Message"
-                                    CssClass="btn-style-4"
-                                    OnClick="btnSubmit_Click"
-                                    OnClientClick="return validateForm();" />
+                                        <asp:TextBox ID="txtPhone"
+                                            runat="server"
+                                            CssClass="form-control"
+                                            MaxLength="10"
+                                            placeholder="Phone Number"></asp:TextBox>
+
+                                    </div>
+
+                                </div>
+
+                                <!-- COURSE DROPDOWN -->
+                                <div class="col-6 col-md-6 col-lg-4 mb-4">
+
+                                    <div class="ixl-contact-form-group">
+
+                                        <asp:DropDownList ID="ddlCourse"
+                                            runat="server"
+                                            CssClass="form-control">
+                                        </asp:DropDownList>
+
+                                    </div>
+
+                                </div>
+
+                                <!-- MESSAGE -->
+                                <div class="col-12 mb-4">
+
+                                    <div class="ixl-contact-form-group">
+
+                                        <asp:TextBox ID="txtMessage"
+                                            runat="server"
+                                            TextMode="MultiLine"
+                                            Rows="5"
+                                            CssClass="form-control"
+                                            placeholder="Your Message"></asp:TextBox>
+
+                                    </div>
+
+                                </div>
+
+                                <!-- BUTTON -->
+                                <div class="col-12">
+
+                                    <asp:Button ID="btnSubmit"
+                                        runat="server"
+                                        Text="Send Message"
+                                        CssClass="btn-style-4"
+                                        OnClick="btnSubmit_Click"
+                                        OnClientClick="return validateForm();" />
+
+                                </div>
 
                             </div>
 
@@ -893,28 +897,25 @@
 
                 </div>
 
+                <!-- SHAPES -->
+                <img src="<%= ResolveUrl("~/assets/images/home-v1/form/shape-02.png") %>"
+                    alt="contact-page-shape"
+                    class="parallax-move-left d-none d-lg-flex ixl-contact-shape-02">
+
+                <img src="<%= ResolveUrl("~/assets/images/home-v1/form/shape-01.png") %>"
+                    alt="contact-page-shape"
+                    class="parallax-move-right d-none d-lg-flex ixl-contact-shape-01">
             </div>
 
-            <!-- SHAPES -->
-            <img src="<%= ResolveUrl("~/assets/images/home-v1/form/shape-02.png") %>"
-                alt="contact-page-shape"
-                class="parallax-move-left d-none d-lg-flex ixl-contact-shape-02">
-
-            <img src="<%= ResolveUrl("~/assets/images/home-v1/form/shape-01.png") %>"
-                alt="contact-page-shape"
-                class="parallax-move-right d-none d-lg-flex ixl-contact-shape-01">
-
         </div>
+    </section>
 
-    </div>
-</section>
+    <!-- VALIDATION SCRIPT -->
+    <script>
 
-<!-- VALIDATION SCRIPT -->
-<script>
+        function validateForm() {
 
-    function validateForm() {
-
-        var name = document.getElementById('<%= txtName.ClientID %>').value.trim();
+            var name = document.getElementById('<%= txtName.ClientID %>').value.trim();
 
         var email = document.getElementById('<%= txtEmail.ClientID %>').value.trim();
 
@@ -990,7 +991,7 @@
         return true;
     }
 
-</script>
+    </script>
 
     <!-- blog posts -->
     <section class="ixl-blog-post pt-120">
@@ -1257,7 +1258,7 @@
             }
         });
 
-</script>
-    
+    </script>
+
 </asp:Content>
 

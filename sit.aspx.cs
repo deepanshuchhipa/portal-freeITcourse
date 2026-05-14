@@ -50,10 +50,9 @@ public partial class _sit : System.Web.UI.Page
                 XmlElement loc = doc.CreateElement("loc", ns);
                 loc.InnerText = fullUrl;
 
-                // ADD loc TO url
                 url.AppendChild(loc);
 
-                // OPTIONAL lastmod
+                // <lastmod>
                 XmlElement lastmod = doc.CreateElement("lastmod", ns);
                 lastmod.InnerText = DateTime.Now.ToString("yyyy-MM-dd");
 
@@ -62,6 +61,8 @@ public partial class _sit : System.Web.UI.Page
                 // ADD TO ROOT
                 urlset.AppendChild(url);
             }
+
+            dr.Close();
         }
 
         // FORMAT XML
@@ -80,12 +81,24 @@ public partial class _sit : System.Web.UI.Page
             doc.Save(writer);
         }
 
-        // OUTPUT XML
+        // DOWNLOAD XML FILE
         Response.Clear();
-        Response.ContentType = "text/xml";
+        Response.Buffer = true;
 
-        Response.Write(sb.ToString());
+        Response.ContentType = "application/xml";
 
+        // FILE NAME
+        Response.AddHeader(
+            "content-disposition",
+            "attachment;filename=sitemap.xml"
+        );
+
+        Response.Charset = "";
+
+        // WRITE XML
+        Response.Output.Write(sb.ToString());
+
+        Response.Flush();
         Response.End();
     }
 }

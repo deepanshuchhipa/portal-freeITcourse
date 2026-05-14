@@ -86,6 +86,8 @@ public partial class _csit : System.Web.UI.Page
                 // ADD URL
                 urlset.AppendChild(url);
             }
+
+            dr.Close();
         }
 
         // FORMAT XML
@@ -108,13 +110,24 @@ public partial class _csit : System.Web.UI.Page
             doc.Save(writer);
         }
 
-        // OUTPUT XML
+        // DOWNLOAD XML FILE
         Response.Clear();
+        Response.Buffer = true;
 
-        Response.ContentType = "text/xml";
+        Response.ContentType = "application/xml";
 
-        Response.Write(sb.ToString());
+        // DOWNLOAD FILE NAME
+        Response.AddHeader(
+            "content-disposition",
+            "attachment;filename=course-sitemap.xml"
+        );
 
+        Response.Charset = "";
+
+        // WRITE XML
+        Response.Output.Write(sb.ToString());
+
+        Response.Flush();
         Response.End();
     }
 }

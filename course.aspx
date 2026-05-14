@@ -1,5 +1,11 @@
-﻿<%@ Page Title="Free Learning Resources" ValidateRequest="false" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="course.aspx.cs" Inherits="_course" %>
-
+﻿<%@ Page 
+    Title="Programming Tutorials & Developer Courses | FreeITLearning.com" 
+    ValidateRequest="false" 
+    Language="C#" 
+    MasterPageFile="~/MasterPage.master" 
+    AutoEventWireup="true" 
+    CodeFile="course.aspx.cs" 
+    Inherits="_course" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">

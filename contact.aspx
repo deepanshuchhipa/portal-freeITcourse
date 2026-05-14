@@ -1,5 +1,10 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="contact.aspx.cs" Inherits="_contact" %>
-
+﻿<%@ Page 
+    Title="Student Support & Course Enquiry | FreeITLearning.com" 
+    Language="C#" 
+    MasterPageFile="~/MasterPage.master" 
+    AutoEventWireup="true" 
+    CodeFile="contact.aspx.cs" 
+    Inherits="_contact" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
@@ -41,11 +46,9 @@
                 <h1 class="ixl-heading-xl">
                     Feel free to message
                 </h1>
-
-                <p>
-                    Aliquam eros justo, posuere loborti viverra
-                    lao ullamcorper posuere viverra liquam eros justo.
-                </p>
+<p>
+    Learn programming, web development, coding skills, and modern IT courses with practical tutorials and real-world projects.
+</p>
 
                 <div>
 

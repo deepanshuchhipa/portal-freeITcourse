@@ -478,49 +478,159 @@
         <div>
 
             <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+<!-- SIDEBAR -->
 
-            <aside class="sidebar" id="sidebar">
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px;">
-                    <div class="nav-logo">
-                        <div class="logo-box"><i class="fas fa-wind"></i></div>
-                        <span>CloudFlow</span>
-                    </div>
-                    <i class="fas fa-times" style="font-size: 22px; cursor: pointer;" onclick="toggleSidebar()"></i>
-                </div>
-                <!-- SIDEBAR -->
-                <nav>
-                    <a href="home.aspx" class="sidebar-link active"><i class="fas fa-home"></i>Home</a>
-                    <a href="about.aspx" class="sidebar-link"><i class="fas fa-layer-group"></i>About</a>
-                    <a href="course.aspx" class="sidebar-link"><i class="fas fa-book-open"></i>Courses</a>
-                    <a href="blog.aspx" class="sidebar-link"><i class="fas fa-shapes"></i>Blog</a>
-                    <a href="contact.aspx" class="sidebar-link"><i class="fas fa-envelope"></i>Contact</a>
-                </nav>
-            </aside>
+<aside class="sidebar" id="sidebar">
 
-            <nav class="navbar">
-                <div class="nav-container">
-                    <a href="#" class="nav-logo">
-                        <div class="logo-box"><i class="fas fa-wind"></i></div>
-                        <span>CloudFlow</span>
-                    </a>
+    <div style="display:flex;
+                justify-content:space-between;
+                align-items:center;
+                margin-bottom:40px;">
+<div class="nav-logo">
+    <div class="logo-box">
+<i class="fas fa-graduation-cap"></i>    </div>
 
-                    <!-- NAVBAR -->
-                    <div class="nav-menu">
-                        <a id="navHome" runat="server" href="home.aspx" class="nav-item">Home</a>
-                        <a id="navAbout" runat="server" href="about.aspx" class="nav-item">About</a>
-                        <a id="navCourse" runat="server" href="course.aspx" class="nav-item">Courses</a>
-                        <a id="navBlog" runat="server" href="blog.aspx" class="nav-item">Blog</a>
-                        <a id="navContact" runat="server" href="contact.aspx" class="nav-item">Contact</a>
-                    </div>
+    <span>SkillStack IT</span>
+</div>
+        <i class="fas fa-times"
+            style="font-size:22px; cursor:pointer;"
+            onclick="toggleSidebar()"></i>
+    </div>
 
-                    <div class="nav-right">
-                        <a href="#" class="btn-contact">Get Started</a>
-                        <div class="sidebar-trigger" onclick="toggleSidebar()">
-                            <i class="fas fa-bars-staggered"></i>
-                        </div>
-                    </div>
-                </div>
-            </nav>
+    <nav>
+
+        <a id="sideHome"
+            runat="server"
+            href="home.aspx"
+            class="sidebar-link">
+
+            <i class="fas fa-home"></i>
+            Home
+        </a>
+
+        <a id="sideAbout"
+            runat="server"
+            href="about.aspx"
+            class="sidebar-link">
+
+            <i class="fas fa-layer-group"></i>
+            About
+        </a>
+
+        <a id="sideCourse"
+            runat="server"
+            href="course.aspx"
+            class="sidebar-link">
+
+            <i class="fas fa-book-open"></i>
+            Courses
+        </a>
+
+        <a id="sideBlog"
+            runat="server"
+            href="blog.aspx"
+            class="sidebar-link">
+
+            <i class="fas fa-shapes"></i>
+            Blog
+        </a>
+
+        <a id="sideContact"
+            runat="server"
+            href="contact.aspx"
+            class="sidebar-link">
+
+            <i class="fas fa-envelope"></i>
+            Contact
+        </a>
+
+    </nav>
+
+</aside>
+
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+
+    <div class="nav-container">
+
+        <a href="home.aspx" class="nav-logo">
+
+         <div class="logo-box">
+    <i class="fas fa-layer-group"></i>
+</div>
+
+            <span>SkillStack IT</span>
+
+        </a>
+
+        <!-- NAV MENU -->
+
+        <div class="nav-menu">
+
+            <a id="navHome"
+                runat="server"
+                href="home.aspx"
+                class="nav-item">
+
+                Home
+            </a>
+
+            <a id="navAbout"
+                runat="server"
+                href="about.aspx"
+                class="nav-item">
+
+                About
+            </a>
+
+            <a id="navCourse"
+                runat="server"
+                href="course.aspx"
+                class="nav-item">
+
+                Courses
+            </a>
+
+            <a id="navBlog"
+                runat="server"
+                href="blog.aspx"
+                class="nav-item">
+
+                Blog
+            </a>
+
+            <a id="navContact"
+                runat="server"
+                href="contact.aspx"
+                class="nav-item">
+
+                Contact
+            </a>
+
+        </div>
+
+        <!-- RIGHT -->
+
+        <div class="nav-right">
+
+            <a href="#" class="btn-contact">
+                Get Started
+            </a>
+
+            <div class="sidebar-trigger"
+                onclick="toggleSidebar()">
+
+                <i class="fas fa-bars-staggered"></i>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</nav>
 
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
@@ -528,7 +638,7 @@
                 <!-- Top Branding Section -->
                 <div class="f-top-branding">
                     <div class="f-brand-identity">
-                        <h1 class="f-logo-text">CloudFlow</h1>
+                        <h1 class="f-logo-text">SkillStack IT</h1>
                     </div>
                     <div class="f-tagline">
                         <p>Elevating your digital experience with seamless cloud solutions. Built for the next generation of creators.</p>
@@ -540,7 +650,7 @@
                 <!-- Bottom Links Section -->
                 <div class="f-bottom-content">
                     <div class="f-copyright">
-                        <p>&copy; 2026 CloudFlow Inc. &bull; All rights reserved.</p>
+                        <p>&copy; 2026 SkillStack IT Inc. &bull; All rights reserved.</p>
 
                     </div>
 
@@ -559,9 +669,17 @@
                         </div>
                         <div class="f-link-col">
                             <h4>Connect</h4>
-                            <a href="#">Twitter</a>
-                            <a href="#">LinkedIn</a>
-                            <a href="#">GitHub</a>
+                    <a href="https://twitter.com" target="_blank">
+    Twitter
+</a>
+
+<a href="https://linkedin.com" target="_blank">
+    LinkedIn
+</a>
+
+<a href="https://github.com" target="_blank">
+    GitHub
+</a>
                         </div>
                     </div>
                 </div>

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Course Details - CloudFlow" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="coursedetail.aspx.cs" Inherits="_coursedetail" %>
+﻿<%@ Page Title="Course Details - SkillStack IT" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="coursedetail.aspx.cs" Inherits="_coursedetail" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <style>

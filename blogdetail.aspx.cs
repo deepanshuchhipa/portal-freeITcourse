@@ -46,19 +46,34 @@ public partial class _blogdetail : System.Web.UI.Page
 
                 if (dt.Rows.Count > 0)
                 {
+                    // BLOG TITLE
+                    string blogTitle =
+                        dt.Rows[0]["Title"].ToString();
+
+                    // PAGE TITLE
+                    Page.Title =
+                        blogTitle + " | SkillStack IT";
+
                     // TITLE
-                    lblTitle.Text = dt.Rows[0]["Title"].ToString();
+                    lblTitle.Text = blogTitle;
 
                     // DESCRIPTION
                     blogDesc.InnerHtml =
-                        Server.HtmlDecode(dt.Rows[0]["Description"].ToString());                    // IMAGE
+                        Server.HtmlDecode(
+                            dt.Rows[0]["Description"].ToString()
+                        );
+
+                    // IMAGE
                     imgBlog.ImageUrl =
-                        ResolveUrl(dt.Rows[0]["ImageUrl"].ToString());
+                        ResolveUrl(
+                            dt.Rows[0]["ImageUrl"].ToString()
+                        );
 
                     // DATE
                     lblDate.Text =
-                        Convert.ToDateTime(dt.Rows[0]["CreatedDate"])
-                        .ToString("MMMM dd, yyyy");
+                        Convert.ToDateTime(
+                            dt.Rows[0]["CreatedDate"]
+                        ).ToString("MMMM dd, yyyy");
                 }
             }
         }

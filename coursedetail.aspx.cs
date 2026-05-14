@@ -126,6 +126,15 @@ public partial class _coursedetail : System.Web.UI.Page
 
                 if (dr.Read())
                 {
+                    // COURSE NAME
+                    string courseName =
+                        dr["course_name"].ToString();
+
+                    // PAGE TITLE
+                    Page.Title =
+                        courseName + " | SkillStack IT";
+
+                    // DESCRIPTION
                     litFullDescription.Text =
                         Server.HtmlDecode(
                             dr["full_description"].ToString()

@@ -1,5 +1,10 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="blog.aspx.cs" Inherits="_blog" %>
-
+﻿<%@ Page 
+    Title="Tech Blogs, Coding Tips & IT Articles | FreeITLearning.com" 
+    Language="C#" 
+    MasterPageFile="~/MasterPage.master" 
+    AutoEventWireup="true" 
+    CodeFile="blog.aspx.cs" 
+    Inherits="_blog" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
@@ -82,7 +87,7 @@
                                     </a>
 
                                     <!-- BUTTON -->
-                                    <a href='blog-single.aspx?id=<%# Eval("BlogID") %>'
+                                    <a href='blogsingle.aspx?id=<%# Eval("BlogID") %>'
                                         class="read-more">
 
                                         Read More
@@ -108,20 +113,10 @@
                                     <div class="pagination-wrapper pagination-wrapper-center mt-0" data-aos="fade-up"
                                         data-aos-delay="600" data-aos-duration="1200">
                                         <ul class="pg-pagination">
-                                            <li>
-                                                <a href="#" aria-label="Previous">
-                                                    <i class="fa-solid fa-angle-left"></i>
-                                                </a>
-                                            </li>
-                                            <li><a href="#">1</a></li>
-                                            <li class="active"><a href="#">2</a></li>
-                                            <li><a href="#">3</a></li>
-                                            <li>
-                                                <a href="#" aria-label="Next">
-                                                    <i class="fa-solid fa-angle-right"></i>
-                                                </a>
-                                            </li>
-                                        </ul>
+
+    <asp:Literal ID="litPagination" runat="server"></asp:Literal>
+
+</ul>
                                     </div>
                                 </div>
                             </div>

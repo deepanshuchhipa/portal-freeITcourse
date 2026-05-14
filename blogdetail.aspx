@@ -98,7 +98,19 @@
         /* Compact spacing for inputs */
         .mb-3 {
             margin-bottom: 1.5rem !important;
+
         }
+        .sticky-contact-form {
+        position: sticky;
+        top: 120px;
+    }
+
+    @media (max-width: 991px) {
+        .sticky-contact-form {
+            position: static;
+            top: auto;
+        }
+    }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
@@ -205,7 +217,7 @@
 
                     </div>
                     <div class="col-lg-4">
-                        <div class="card shadow-sm">
+                        <div class="card shadow-sm sticky-contact-form">
                             <div class="card-body">
                                 <h3 class="card-title mb-4">Contact Us</h3>
                                 <form id="contactForm" action="#" method="POST">
